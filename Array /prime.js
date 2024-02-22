@@ -1,3 +1,4 @@
+//Checks the Number is Prime Or Not
 function isPrime(number){
     if(number<2){
         return false
@@ -9,3 +10,4 @@ function isPrime(number){
     }
     return true
 }
+console.log(isPrime(5))  //true

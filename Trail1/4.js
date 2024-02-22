@@ -107,5 +107,5 @@ class DoubleLinked{
 const list = new DoubleLinked()
 list.append(1)
 list.prepend(2)
-list.addIndexValue(12,1)
+
 list.print()

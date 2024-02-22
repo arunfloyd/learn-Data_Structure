@@ -33,6 +33,7 @@ They define the relationship between the data, and the operations that can be pe
 
 ........................Linear Data Structures And Non-Linear Data Structures................
 
+
 Linear and non-linear data structures are two broad categories of data structures based on how they organize and store data.
 
 
@@ -59,13 +60,18 @@ Examples include trees, graphs, and heaps.
 
 Operations in non-linear data structures can involve traversing through multiple elements, which can be more complex than in linear data structures.
 
-The time complexity for accessing elements in a non-linear data structure can vary widely depending on the specific structure and the operation being performed.
+The time complexity for accessing elements in a non-linear data structure can vary widely depending on the specific structure and
+
+the operation being performed.
 
 ............................................
+
 Linear data structures are simpler and often more efficient for operations that involve traversing the entire structure,
+
 while non-linear data structures are more complex but can provide more efficient operations for certain types of queries or updates.
 
 The choice between using a linear or non-linear data structure depends on the specific requirements of the problem at hand.
+
 ..........................................
 
 
@@ -108,6 +114,7 @@ Effectiveness: The algorithm must be effective, meaning that it must produce the
 
 
 ...........................Asymptotic analysis..........................
+
 
 Asymptotic analysis is used to describe the growth of the time or space complexity as the size of the input grows.
 
@@ -158,11 +165,13 @@ It is used to describe a lower bound that is not tight enough to be considered a
 
 
 ................................................................................
+
 Asymptotic analysis is crucial for understanding the efficiency of algorithms, especially when comparing different algorithms for the same problem.
 
 By using asymptotic notation, we can express the growth rate of an algorithm's complexity in a way that is independent of the specific details of the algorithm
 
 and is focused on the overall behavior as the input size grows.
+`
 ................................................................................
 
 
@@ -224,11 +233,13 @@ which is common in efficient sorting algorithms like merge sort and quicksort.
 
 
 ...............................................................................
+
 Complexity analysis is essential for making informed decisions about which algorithm to use for a particular task, 
 
 especially when dealing with large datasets or when performance is a critical factor.
 
 It helps developers balance the trade-offs between different algorithms and choose the most appropriate one for their specific use case.
+
 ...............................................................................
 
 
@@ -343,7 +354,9 @@ Contiguous memory allocation can be done on the stack (for local variables) or o
 
 The advantage of contiguous memory allocation is that it allows for efficient access to data, as the CPU can access memory locations sequentially.
 
-The disadvantage, it can lead to fragmentation, where free memory is divided into small, non-contiguous blocks, making it difficult to allocate large contiguous blocks of memory.
+The disadvantage, it can lead to fragmentation, where free memory is divided into small, non-contiguous blocks, 
+
+making it difficult to allocate large contiguous blocks of memory.
 
 
 ...............................Non-Contiguous Memory Allocation:...................
