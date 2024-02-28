@@ -753,7 +753,679 @@ console.log(sparseArray[0]); // Output: 'first'
 console.log(sparseArray[999]); // Output: 'last'
 
  
+ ...............................Bubble Sort ..........................................
+
+ -> Bubble Sort is a simple sorting algorithm that repeatedly steps through the list, compares adjacent elements,
  
+    and swaps them if they are in the wrong order.
  
+ ->  The pass through the list is repeated until the list is sorted.
+
+ -> The algorithm gets its name from the way smaller or larger elements "bubble" to the top of the list.
+
+ ->Bubble Sort has a time complexity of O(n^2) in the worst and average cases,
  
+   where n is the number of elements in the array.
+
+ -> The space complexity of Bubble Sort is O(1),
+  
+ ->  The best case time complexity is O(n) when the input array is already sorted
+
+
+
+ ..................................Insertion Sort ......................................
+
+ -> Insertion Sort is a simple sorting algorithm that builds the final sorted array one item at a time
+
+ -> It is much less efficient on large lists than more advanced algorithms such as quicksort, heapsort, or merge sort.
+
+ -> The time complexity of Insertion Sort is O(n^2) in the worst and average cases
+
+ -> The best case time complexity is O(n) when the input array is already sorted
+
+ -> The space complexity of Insertion Sort is O(1) 
+
+
+ ................................Selection Sort............................................
+
+ -> Selection Sort is a simple sorting algorithm that divides the input list into two parts:
+    ->  the sublist of items already sorted and
+    ->  the sublist of items remaining to be sorted that occupy the rest of the list. 
+
+ -> Initially, the sorted sublist is empty and the unsorted sublist is the entire input list.
+
+ -> The algorithm proceeds by finding the smallest (or largest, depending on the sorting order) element in the unsorted sublist,
+  
+  swapping it with the leftmost unsorted element (putting it in sorted order),
+  
+  and moving the sublist boundaries one element to the right.
+
+-> The time complexity of Selection Sort is O(n^2) in all cases (best, average, and worst)
+
+  as it always performs n(n-1)/2 comparisons
+
+->The space complexity of Selection Sort is O(1), 
+
+
+.................................... Quick Sort .............................................
+
+-> Quick Sort is a highly efficient sorting algorithm that uses a divide-and-conquer approach.
+
+-> It works by selecting a 'pivot' element from the array and partitioning the other elements into two sub-arrays,
+
+  according to whether they are less than or greater than the pivot
+
+-> The time complexity of Quick Sort in the average case is O(n log n),worst case O(n^2).
+
+-> The space complexity of Quick Sort is O(log n)
+
+ ....................................Merge Sort ..........................................
+
+ -> Merge Sort is a divide-and-conquer algorithm that divides the input array into two halves,
  
+   calls itself for the two halves, and then merges the two sorted halves.
+ 
+ -> The time complexity of Merge Sort is O(n log n) in all cases (best, average, and worst) 
+ 
+ -> The space complexity is O(n) - because of the temporary arrays used during the merge process.
+
+
+.......................................Stack.................................................
+
+-> A stack is a linear data structure that follows a particular order in which operations are performed. 
+
+-> The order may be LIFO (Last In First Out) or FILO (First In Last Out)
+
+-> Three basic operations are performed in the stack:
+
+        >> Push: Adds an item in the stack.
+                 If the stack is full, then it is said to be an Overflow condition.
+        
+        >>Pop: Removes an item from the stack.
+               The items are popped in the reversed order in which they are pushed.
+               If the stack is empty, then it is said to be an Underflow condition.
+        
+        >> Peek or Top: Returns the top element of the stack.
+        
+        >> isEmpty: Returns true if the stack is empty, else false.
+
+-> Push, Pop, Peek, isEmpty, and Size operations all have a time complexity of O(1) 
+  
+  because they involve a constant number of operations regardless of the size of the stack.
+
+-> Search operation has a time complexity of O(n) 
+
+  because it may require examining every element in the stack in the worst case.
+
+  >>>>>>>>>>>>>> Applications <<<<<<<<<<<<<<<<<
+
+  >> Function Call Stacks: In programming languages, a stack is used to keep track of function calls.
+                           When a function is called, its return address and local variables are pushed onto the stack. 
+                           When the function returns, its information is popped from the stack.
+  
+  >> Expression Evaluation: Stacks are used to evaluate expressions, especially in postfix (RPN) notation. 
+                            Each operand is pushed onto the stack, and when an operator is encountered, 
+                            the required number of operands are popped from the stack, 
+                            the operation is performed, and the result is pushed back onto the stack.
+ 
+  >> Undo Mechanisms: In text editors and other applications, a stack can be used to implement an undo feature.
+                      Each action (e.g., typing a character, deleting a character) is pushed onto a stack.
+                      When the user wants to undo an action, it is popped from the stack and reversed.
+
+  >> Backtracking Algorithms: Stacks are used in backtracking algorithms to store the state of the algorithm,
+                              allowing it to backtrack when necessary.
+  
+  >> Depth-First Search (DFS): In graph algorithms, a stack is used to perform a depth-first search.
+                               Each node is pushed onto the stack, and the algorithm explores as far as possible 
+                               along each branch before backtracking.
+
+    >>>>>>>>>> Types <<<<<<<<<<<<<<<<<<
+
+     >> Standard Stack: The most basic type of stack, where elements are added (pushed) at the top
+                         and removed (popped) from the top.
+     
+     >> Min Stack: A stack that keeps track of the minimum element in the stack at all times. 
+                   This is useful in scenarios where you need to quickly find the minimum element in a stack.
+     
+     >> Max Stack: Similar to the Min Stack, but it keeps track of the maximum element.
+
+     >> Two Stack Queue: A queue implemented using two stacks.
+                         This is a creative way to implement a queue using only stacks,
+                         which can be useful in scenarios where only stack operations are available.
+     
+     >> Stack with Increment Operator: A stack that supports an increment operation,
+                                       which increments the value of the top element by a given value.
+                                       
+                                       This is a more complex data structure that can be used in specific applications.                           
+
+...................................Queue ....................................        
+
+-> A queue is a linear data structure that follows a particular order in which operations are performed.
+
+-> The order is First In First Out (FIFO).
+
+-> The end of the queue is called the rear, and the front of the queue is called the head.
+
+-> The operations typically performed on a queue include:
+
+       -> Enqueue: Adds an element to the end of the queue.
+       -> Dequeue: Removes an element from the front of the queue.
+       -> Front: Gets the front item from the queue.
+       -> Rear: Gets the last item from the queue.
+       -> isEmpty: Checks if the queue is empty.
+       -> isFull: Checks if the queue is full.
+-> Enqueue, Dequeue, Front, Rear, isEmpty, and isFull operations all have a time complexity of O(1) 
+   
+  because they involve a constant number of operations regardless of the size of the queue.       
+
+-> Space Complexity: O(n)
+
+ >>>>>>>>> Applications <<<<<<<<<<<<<<<
+   
+   >> Task Scheduling: Queues are used in operating systems to manage tasks. 
+                      Each task is placed in a queue, and the operating system processes them in the order they were added.
+
+   >> Print Spooler: In computer printing, the print spooler uses a queue to manage print jobs. 
+                     When a print job is submitted, it is added to the queue.
+                     The printer then processes jobs in the order they were received.
+
+   >> Disk Scheduling: In disk scheduling algorithms, queues are used to manage disk requests.
+                       The disk scheduler uses a queue to hold disk requests and processes them in a specific order
+   
+   >> Caching: Queues can be used to implement a cache replacement policy.
+               When the cache is full and a new item needs to be added, 
+               the oldest item (the one at the front of the queue) is removed to make room for the new item.
+   
+   >>Simulation: Queues are used in simulations to model real-world scenarios,
+                 such as waiting in line at a supermarket checkout or managing network traffic.
+
+   >>>>>>>>>  Types of Queue  <<<<<<<<<<<<
+
+  >> Standard Queue: The most basic type of queue, where elements are added at the rear and removed from the front.
+
+  >> Priority Queue: A queue where elements are assigned a priority.
+                      Elements with higher priority are dequeued before elements with lower priority. 
+                      If two elements have the same priority, they are dequeued according to their order in the queue.
+
+  >> Circular Queue: A queue that is implemented as a circular buffer,
+                      where the last position in the buffer is connected back to the first position.
+                      This allows for efficient use of memory and can be useful in scenarios where the queue size is fixed.
+  
+  >> Double-Ended Queue (Deque): A queue that allows insertion and removal of elements from both ends. 
+                                 This is not a standard queue but is a more flexible data structure
+                                  that can be used in various applications.
+
+...................................Peek..........................................
+
+ The peek operation allows you to see the next element to be removed or accessed without altering the structure
+
+
+.............................. Stable And Unstable.........................
+
+ -> A sorting algorithm is considered stable if two objects with equal keys appear in the same order in the sorted output 
+    as they appear in the input array to be sorted.
+  
+ -> Conversely, an unstable sorting algorithm does not guarantee this property.
+
+ .......................Stable Sorting Algorithms...................
+
+  -> Stable sorting algorithms maintain the relative order of records with equal keys (i.e., values). 
+    
+    This is important in scenarios where the order of equal elements matters.
+    
+  -> Examples of stable sorting algorithms include:
+
+            --> Insertion Sort
+            --> Bubble Sort
+            --> Merge Sort (when implemented in a stable manner)
+            --> Counting Sort
+            --> Radix Sort
+            --> Cocktail Sort
+            --> Gnome Sort
+
+.........................Unstable Sorting Algorithms..................
+
+ -> Unstable sorting algorithms do not guarantee that the relative order of equal elements will be preserved in the sorted output.
+ 
+  >>>>> Examples of unstable sorting algorithms include:
+
+        >> Quick Sort (in its basic implementation)
+        >> Heap Sort
+        >> Selection Sort
+        >> Shell Sort
+
+
+ ...........................Deterministic And Non Deterministic..................       
+
+ -> In the context of algorithms and computer science, the terms "deterministic" and "non-deterministic"
+   
+     refer to the predictability of an algorithm's behavior and its output.
+
+ ............................Deterministic Algorithms .........................
+
+-> A deterministic algorithm is one whose output is uniquely determined by its input. 
+
+-> Given the same input, a deterministic algorithm will always produce the same output, 
+  and it will complete in a finite amount of time. 
+  
+ -> Deterministic algorithms are predictable and repeatable. 
+ 
+ >>>>> Examples of deterministic algorithms include:
+
+     >> Sorting algorithms (e.g., Bubble Sort, Merge Sort, Quick Sort)
+
+     >> Search algorithms (e.g., Binary Search)
+
+     >> Hashing algorithms (e.g., MD5, SHA-1)
+
+     >> Algorithms for solving mathematical problems (e.g., algorithms for solving linear equations)    
+
+........................... Non-Deterministic Algorithms..........................
+
+-> A non-deterministic algorithm is one whose behavior is not uniquely determined by its input. 
+
+-> It may produce different outputs for the same input, or it may not terminate for some inputs.
+
+-> Non-deterministic algorithms are often used in theoretical computer science to model systems
+   where the outcome is not predictable due to randomness or unpredictable inputs. 
+   
+   >>>> Examples of non-deterministic algorithms include:
+
+          >> Randomized algorithms (e.g., Randomized Quick Sort, Randomized Selection)
+
+          >> Algorithms that rely on external input (e.g., algorithms that use random numbers or user input)
+
+          >> Algorithms in quantum computing (e.g., Grover's algorithm, Shor's algorithm)    
+
+
+..........................Stack Underflow Vs Stack Overflow.......................
+
+-> "stack underflow" and "stack overflow" are conditions that can occur during the execution of a program,
+     particularly when operations are performed on a stack
+
+.................................Stack Underflow ..........................
+
+->  A stack underflow occurs when an operation is attempted on an empty stack.
+ 
+-> This typically happens when a pop or peek operation is performed on a stack that has no elements.
+
+-> The result of a stack underflow can vary depending on the implementation and the programming language,
+    but it often leads to an error or exception being thrown.
+
+-> Example Scenario: A program attempts to pop an element from an empty stack.
+
+>>>>>>>>Consequences:
+
+  >>> The program may terminate with an error message indicating a stack underflow.
+   
+  >>> In some cases, the program might continue to run but with unexpected behavior,
+      as it tries to access data that doesn't exist.
+
+
+..................................Stack Overflow...................................
+
+ -> A stack overflow occurs when a stack's capacity is exceeded,
+    meaning that more elements are pushed onto the stack than it can hold. 
+  
+ -> This can happen in scenarios where there is a recursive function call that does not have a proper base case, 
+    leading to an infinite recursion, or when a large amount of data is pushed onto the stack without checking
+   if there is enough space.
+
+ -> Example Scenario: A program recursively calls a function without a proper base case, leading to an infinite recursion.
+
+>>>>> Consequences:
+
+ >>> The program may terminate with an error message indicating a stack overflow.
+
+ >>> In some cases, the program might continue to run but with unexpected behavior,
+     as it tries to access memory that it shouldn't.
+ >>> In severe cases, a stack overflow can lead to a program crash or, in the worst-case scenario, a system crash.
+
+
+ .................................Divide And Conquer Strategy.....................
+
+ -> The divide and conquer strategy is a powerful algorithmic technique used in computer science 
+    to solve problems by breaking them down into smaller, more manageable subproblems. 
+
+ >>>> Three main steps:
+
+       >> Divide: Break the problem into smaller subproblems.
+       >> Conquer: Solve each subproblem independently.
+       >> Combine: Merge the solutions of the subproblems to solve the original problem.
+
+  -> This strategy is widely used in various algorithms,
+     including sorting (e.g., merge sort, quicksort), 
+     searching (e.g., binary search), 
+     and graph algorithms (e.g., depth-first search).
+
+ .............................Hash Table ...............................
+
+-> A hash table, also known as a hash map, is a data structure that implements an associative array abstract data type,
+   a structure that can map keys to values.
+
+-> It uses a hash function to compute an index into an array of buckets or slots,
+   from which the desired value can be found. 
+   
+-> Hash tables are widely used in computer science due to their efficiency in lookup,
+   insertion, and deletion operations.   
+
+  >>>>>>>>> Applications of Hash Tables <<<<<<<<<<<<<< 
+
+    >>> Database Indexing: Hash tables are used in database systems to index data.
+                          They allow for fast retrieval of records based on keys,
+                           significantly speeding up data access.
+    
+    >>> Caching: Hash tables are used in caching mechanisms to store and retrieve data quickly.
+                For example, web browsers use hash tables to cache web pages,
+                reducing the need to re-fetch data.
+
+    >>> String Matching: Hash tables are used in algorithms like the Rabin-Karp algorithm for string matching,
+                         which allows for efficient searching of patterns within text.
+
+    >>> Counting Frequencies: Hash tables can be used to count the frequency of elements in a collection,
+                              such as in the counting sort algorithm.
+    
+    >>> Deduplication: In data processing, hash tables can be used to remove duplicates from a dataset by using the
+                       hash table to track the presence of elements.
+   
+    >>> Symbol Tables: In compilers and interpreters, hash tables are used as symbol tables to store variable names and 
+        their corresponding values.
+
+    >>> Cryptography: Hash tables are used in cryptographic algorithms for storing and retrieving keys.
+
+    >>> Websites and Web Applications: Hash tables are used in web development for session management,
+                                       where they store session IDs and their corresponding user data.
+   
+    >>> Networking: In network protocols, hash tables are used for routing tables, 
+                     where they map IP addresses to network interfaces.
+
+    >>> Machine Learning: Hash tables are used in machine learning for feature extraction and dimensionality reduction, 
+                          such as in the use of hash functions in locality-sensitive hashing (LSH) for nearest neighbor search.
+
+
+............................Pros of Using Linked Lists for Stacks...........................
+
+ >>> Dynamic Size: Linked Lists can grow and shrink dynamically as elements are added or removed.
+                   This is particularly useful for stacks, where the number of elements can vary significantly.
+ 
+ >>> Efficient Memory Usage: Linked Lists allocate memory as needed, which can be more memory-efficient than arrays,
+                             especially when the maximum size of the stack is unknown or can change frequently.
+ 
+ >>> Fast Operations: Both push (insertion at the top) and pop (removal from the top) operations in a stack implemented 
+                      with a Linked List are very fast, with a time complexity of O(1).
+                      This is because these operations only involve updating a few pointers.
+ 
+ >>>Ease of Implementation: Implementing a stack using a Linked List is straightforward,
+                            as it involves managing a head pointer and performing operations at the head of the list.
+
+
+............................Pros of Using Linked Lists for Queues........................
+
+>>> Dynamic Size: Similar to stacks, Linked Lists can grow and shrink dynamically,
+                  making them suitable for queues where the number of elements can vary.
+
+>>> Efficient Memory Usage: Linked Lists use memory more efficiently than arrays for queues,
+                            especially when the maximum size of the queue is unknown or can change.
+
+>>> Fast Enqueue and Dequeue Operations: For a queue implemented with a Linked List, 
+                                        enqueue (insertion at the end) and dequeue (removal from the front) operations are fast,
+                                         with a time complexity of O(1). This is because these operations only involve updating 
+                                         a few pointers.
+ 
+ >>> Ease of Implementation: Implementing a queue using a Linked List is relatively straightforward,
+                             involving managing a head and a tail pointer to efficiently perform enqueue and dequeue operations.
+
+
+
+.......................................Double-Ended Queue (DEQUE) ...........................
+
+ -> A Double-Ended Queue (DEQUE) is a generalization of a queue that allows insertion and removal of elements from both ends.
+   
+ -> This means you can add or remove elements from the front and the back of the queue.
+ 
+ -> The term "double-ended" refers to the fact that the queue has two ends, 
+     unlike a standard queue which has only one end (the back).
+
+ >>>>>>>>>>>>  Operations on a Double-Ended Queue
+             
+             >>> EnqueueFront: Adds an element to the front of the DEQUE.
+             >>> EnqueueBack: Adds an element to the back of the DEQUE.
+             >>> DequeueFront: Removes an element from the front of the DEQUE.
+             >>> DequeueBack: Removes an element from the back of the DEQUE.
+             >>> PeekFront: Returns the element at the front of the DEQUE without removing it.
+             >>> PeekBack: Returns the element at the back of the DEQUE without removing it.
+
+
+ >>>>>>>>>>>>>>  Characteristics of a Double-Ended Queue
+
+            >>> Dynamic Size: Like other dynamic data structures,
+                             a DEQUE can grow and shrink in size as elements are added or removed.
+            >> Efficient Memory Usage: DEQUEs can be more memory-efficient than arrays or other data structures 
+                                      for certain operations, especially when the maximum size is unknown or can change.
+
+            >> Flexibility: The ability to add or remove elements from both ends provides flexibility in
+                             how data is managed and accessed.
+            
+
+ .......................Hash Functions ..............................           
+
+ ->  A hash function is a function used in hash tables to map data of arbitrary size to fixed-size values. 
+ 
+ -> The output of a hash function is called a hash code, hash value, or simply hash.
+ 
+ -> The primary purpose of a hash function is to distribute data evenly across the hash table,
+    minimizing collisions (where two different inputs produce the same hash value).
+
+>>>>>>>>>>>>>>> Types of Hash Functions
+
+    >>> Division Method: This method involves dividing the key by a prime number and using the remainder as the hash value.
+                         The prime number is chosen to ensure a good distribution of keys.
+
+    >>> Multiplication Method: Similar to the division method, but instead of dividing, 
+                               the key is multiplied by a fractional number between 0 and 1,
+                              and the fractional part is used as the hash value.
+ 
+    >>> Universal Hashing: This method uses a hash function that is designed to produce a uniform distribution of hash values
+                           for a given set of keys. It often involves a combination of division and multiplication methods.
+
+    >>> Cryptographic Hash Functions: These are hash functions that are designed to be secure against attacks.
+                                      They are used in cryptography and digital signatures. Examples include SHA-256, SHA-3, and MD5.
+
+    >>> Non-Cryptographic Hash Functions: These are hash functions that are not designed to be secure against attacks 
+                                          but are used for tasks like data retrieval, data integrity checks,
+                                          and data deduplication. Examples include MurmurHash, CityHash, and FNV-1a.
+    
+    >>> Perfect Hash Functions: These are hash functions that map distinct keys to distinct hash values without any collisions.
+                                They are used in scenarios where collisions are not acceptable.
+
+    >>> Custom Hash Functions: These are hash functions designed specifically for a particular application or dataset.
+                               They are often tailored to the characteristics of the data to achieve optimal performance.
+
+
+ ....................................Hash Value ................................
+ 
+  -> A hash value, also known as a hash code, is the output produced by a hash function. 
+  
+  -> Hash functions are designed to take an input (or 'message') and return a fixed-size string of bytes,
+     typically in the form of a hash code. 
+  
+  -> The output is intended to be unique to the input data; 
+     small changes to the input should produce such a drastic change in the output that the new hash value appears
+     uncorrelated with the old hash value.
+
+>>>>>>>>>>>>>>  Characteristics of Hash Values
+  
+   >>> Fixed Size: Regardless of the size of the input data,
+                  the hash value produced by a hash function is always of a fixed size.
+                  This is crucial for efficient storage and comparison.
+   
+   >>> Deterministic: For a given input, the hash function will always produce the same hash value.
+                      This property is essential for data retrieval and verification purposes.
+   
+   >>> Uniform Distribution: A good hash function aims to distribute the hash values uniformly across the hash table,
+                             minimizing collisions (where two different inputs produce the same hash value).
+   
+   >>> Non-Invertible: Ideally, it should be computationally infeasible to retrieve the original input data from the hash value.
+                       This property is crucial for security applications, such as password hashing.
+
+                      
+                      
+  ................................. Collisions.........................
+
+  -> While the goal of a hash function is to produce a unique hash value for each unique input, collisions can occur.
+ 
+  -> A collision happens when two different inputs produce the same hash value.
+     The impact of collisions depends on the application:
+
+  -> In Hash Tables: Collisions can degrade performance, as the hash table must resolve the collision,
+                   often by using a collision resolution technique like chaining or open addressing.
+  
+  -> In Cryptographic Hash Functions: Collisions are considered a security vulnerability, as they can be exploited in attacks.
+
+
+  ............................Prevent Collisions ..........................
+
+   1. Open Addressing
+            In open addressing, if a collision occurs, the hash table looks for the next available slot.
+            There are several methods to find the next available slot:
+
+                        >>> Linear Probing: The hash table looks for the next slot in a linear sequence.
+                        >>> Quadratic Probing: The hash table looks for the next slot in a quadratic sequence.
+                        >>> Double Hashing: The hash table uses a second hash function to determine the next slot.
+
+    2. Chaining
+            Chaining involves using a linked list to store all the elements that hash to the same index.
+            Each slot in the hash table points to the head of a linked list.
+            When a collision occurs, the new element is added to the end of the list.
+
+    3. Resizing
+            Resizing involves increasing the size of the hash table when the load factor 
+            (the ratio of the number of elements to the size of the hash table) exceeds a certain threshold.
+            This can help in reducing the likelihood of collisions by providing more space for the elements.
+
+    4. Cuckoo Hashing
+             Cuckoo hashing is a method that uses two hash functions instead of one.
+             Each key is hashed by two hash functions, and it is placed in the slot pointed to by the first hash function.
+             If that slot is already occupied, the key is placed in the slot pointed to by the second hash function.
+             This process is repeated until all keys are placed in their correct slots.
+
+    5. Robin Hood Hashing
+             Robin Hood hashing is a variant of open addressing that aims to distribute keys more evenly across the hash table.
+             When a collision occurs, the new key is placed in the slot with the least number of probes required to reach it,
+             displacing the key that required more probes.
+
+    6. Separate Chaining with Linked Lists
+             This method is similar to chaining but uses a more sophisticated data structure, such as a balanced search tree,
+             to store the elements in each slot.
+             This can improve performance in scenarios where the number of elements in a slot is large.
+
+    7. Use of a Good Hash Function
+             Choosing a good hash function is crucial for minimizing collisions.
+             A good hash function should distribute keys uniformly across the hash table, making collisions less likely.
+
+    8. Collision Resolution Policies
+             Implementing a collision resolution policy can help manage collisions more effectively.
+             For example, a policy might prioritize the storage of more important keys over less important 
+            ones to minimize the impact of collisions.
+
+
+ >>>>>>>>>>>>>  Chaining
+           
+          >>> Chaining is a method where each slot in the hash table points to a linked list
+               of entries that hash to the same slot. 
+               When a collision occurs, the new key-value pair is added to the end of the list.
+
+>>>> Advantages:
+
+          >>> Simple to implement.
+          >>> Works well when the load factor is low.
+>>>> Disadvantages:
+
+          >>> Can lead to long linked lists, which can degrade performance.
+          >>> Requires additional memory for the linked list nodes.           
+
+ >>>>>>>>>>>>> Linear Probing
+
+           >>> Linear probing is a method where, upon a collision, the hash table looks for the next available slot
+                in a linear sequence.
+
+ >>> Advantages:
+
+           >>> Simple to implement.
+           >>> Does not require additional memory for linked lists.
+ 
+ >>>Disadvantages:
+
+           >>> Can lead to clustering, where a group of consecutive slots are filled, leading to longer search times.
+           >>> Performance degrades as the load factor increases.
+
+>>>>>>>>>>>>Quadratic Probing
+
+          >>> Quadratic probing is an extension of linear probing where the hash table looks for the next available slot
+              in a quadratic sequence. This can help in reducing clustering.
+
+ >>> Advantages:
+
+          >>> Reduces clustering compared to linear probing.
+          >>> Does not require additional memory for linked lists.
+
+>>> Disadvantages:
+
+          >>> More complex to implement than linear probing.
+          >>>Performance can still degrade as the load factor increases.
+
+
+>>>>>>>>>>>>>> Double Hashing
+       
+          >>> Double hashing uses two hash functions to determine the next slot when a collision occurs.
+              The first hash function is used to find the initial slot,
+              and the second hash function is used to find the next slot.
+
+ >>> Advantages:
+
+          >>> Can reduce clustering compared to linear and quadratic probing.
+          >>> Does not require additional memory for linked lists.
+
+ >>> Disadvantages:
+
+          >>> More complex to implement than linear and quadratic probing.
+          >>> Requires two hash functions, which can be computationally expensive.
+
+
+....................................Load factor .............................
+
+ -> The load factor in the context of hash tables is a measure of how full the hash table is.
+  
+->It is calculated as the ratio of the number of entries in the hash table to the total number of slots available in the table.
+
+-> The load factor is a crucial metric because it directly influences the performance and efficiency of the hash table.
+
+ >>>>>> Importance of Load Factor
+          >>> Performance: As the load factor increases, the likelihood of collisions also increases,
+                           which can degrade the performance of the hash table.
+                           Collisions can lead to longer search times, as the hash table needs to resolve these collisions 
+                           using various collision resolution techniques.
+          
+          >>> Memory Usage: A high load factor can also indicate that the hash table is using more memory than necessary.
+                            This is because the hash table may have allocated more slots than are currently needed to store the entries.
+          
+          >>> Resizing: Many hash table implementations automatically resize the table when the load factor exceeds a certain threshold.
+                        Resizing can be an expensive operation, as it involves creating a new, 
+                        larger table and rehashing all the existing entries.
+
+ >>>>>>>Managing Load Factor
+         
+        >>> To maintain good performance and memory efficiency, it's important to manage the load factor effectively:
+
+             >>> Initial Size: Choosing an appropriate initial size for the hash table can help in managing the load factor.
+                               A larger initial size can reduce the need for resizing but may also lead to 
+                               wasted memory if the table is not fully utilized. 
+             >>> Resizing Policy: Implementing a good resizing policy can help in managing the load factor.
+                                  This typically involves doubling the size of the table when the load factor exceeds a certain
+                                  threshold, such as 0.75 or 0.8.
+             >>> Collision Resolution: Using effective collision resolution techniques can help in managing collisions and thus
+                                       indirectly managing the load factor.
+                                       Techniques like chaining, open addressing (linear, quadratic, and double hashing),
+                                       and cuckoo hashing can help in reducing the impact of collisions.       
+                                       
+                                                       
