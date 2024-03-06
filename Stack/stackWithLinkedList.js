@@ -4,13 +4,11 @@ class Node {
     this.next = null;
   }
 }
-
 class Stack {
   constructor() {
     this.top = null;
     this.size = 0;
   }
-
   push(value) {
     const node = new Node(value);
     node.next = this.top;
@@ -42,13 +40,13 @@ class Stack {
   }
 
   print() {
-    let stack =""
+    let stack = "";
     let current = this.top;
     while (current) {
-        stack+=`${current.value} `
+      stack += `${current.value} `;
       current = current.next;
     }
-    console.log(stack)
+    console.log(stack);
   }
 }
 
@@ -58,7 +56,6 @@ stack.push(1);
 stack.push(2);
 stack.push(3);
 stack.push(4);
-
 
 // console.log(stack.peek()); // 3
 // console.log(stack.pop()); // 3

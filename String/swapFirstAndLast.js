@@ -16,14 +16,14 @@ function swap(string) {
 const result = swap("APPLE");
 console.log(result); // Output: EPPLA
 
-//Method 2  
+//Method 2
 
 function swap(string) {
-    if (string.length < 2) {
-        return string;
-    }
+  if (string.length < 2) {
+    return string;
+  }
 
-    return string[string.length - 1] + string.slice(1, -1) + string[0];
+  return string[string.length - 1] + string.slice(1, -1) + string[0];
 }
 
 const results = swap("APPLE");

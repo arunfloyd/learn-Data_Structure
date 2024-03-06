@@ -8,14 +8,14 @@ class HashTable {
     for (let i = 0; i < key.length; i++) {
       total += key.charCodeAt(i);
     }
-    return total % this.size;
+    return total;
   }
   set(key, value) {
     const index = this.hash(key);
     // this.table[index] = value;
     const bucket = this.table[index];
     if (!bucket) {
-        this.table[index]  = [[key, value]];
+      this.table[index] = [[key, value]];
     } else {
       const sameKeyItem = bucket.find((item) => item[0] === key);
       if (sameKeyItem) {
@@ -63,7 +63,7 @@ table.set("Age", 24);
 table.display();
 
 console.log(table.get("name"));
-table.set("mane","Siju");
+table.set("mane", "Siju");
 table.display();
 
 //Avg Time is O(1)

@@ -1,43 +1,54 @@
-// Circular Queue implementation
+class MyCircularQueue {
+  constructor(k) {
+    this.queue = [];
+    this.size = k;
+  }
 
-//The last position is connected back to the first position to make a circle
+  enQueue(value) {
+    if (this.size === this.queue.length) return false;
+    this.queue.push(value);
+    return true;
+  }
 
-var MyCircularQueue = function (k) {
-  this.queue = [];
-  this.size = k;
-};
-MyCircularQueue.prototype.enQueue = function (value) {
-  if (this.size === this.queue.length) return false;
-  this.queue.push(value);
-  return true;
-};
+  deQueue() {
+    if (this.queue.length === 0) return false;
+    this.queue.shift();
+    return true;
+  }
 
-MyCircularQueue.prototype.deQueue = function () {
-  if (this.queue.length === 0) return false;
-  this.queue.shift();
-  return true;
-};
-MyCircularQueue.prototype.Front = function () {
-  if (this.queue.length === 0) return -1;
-  return this.queue[0];
-};
-MyCircularQueue.prototype.Rear = function () {
-  if (this.queue.length === 0) return -1;
-  return this.queue[this.queue.length - 1];
-};
+  Front() {
+    if (this.queue.length === 0) return -1;
+    return this.queue[0];
+  }
 
-MyCircularQueue.prototype.isEmpty = function () {
-  return this.queue.length === 0;
-};
+  Rear() {
+    if (this.queue.length === 0) return -1;
+    return this.queue[this.queue.length - 1];
+  }
 
-MyCircularQueue.prototype.isFull = function () {
-  return this.size === this.queue.length;
-};
+  isEmpty() {
+    return this.queue.length === 0;
+  }
 
-var circleQ = new MyCircularQueue()
-circleQ.enQueue(1)
-circleQ.enQueue(7)
-circleQ.deQueue()
+  isFull() {
+    return this.size === this.queue.length;
+  }
+  print() {
+    let list = "";
+    for (let i = 0; i < this.queue.length; i++) {
+      list += `${this.queue[i]} `;
+    }
+    console.log(list);
+  }
+}
 
+const circleQ = new MyCircularQueue();
+circleQ.enQueue(1);
+circleQ.enQueue(7);
+circleQ.enQueue(0);
 
-console.log(circleQ.Front(),circleQ.Rear())
+circleQ.print();
+circleQ.deQueue();
+circleQ.print();
+
+//   console.log(circleQ.Front(), circleQ.Rear());

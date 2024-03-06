@@ -16,7 +16,7 @@ function insertionSort(arr) {
   return arr;
 }
 
-console.log(insertionSort([2, 5, 3, 1, 5]));
+console.log(insertionSort([2, 5, 3, 1, 5])); 
 
 //Time Best = O(n) Worst = O(n^2) Average = O(n^2)
 

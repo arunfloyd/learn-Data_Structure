@@ -285,6 +285,7 @@ LINKED LISTS ARE A FUNDAMENTAL DATA STRUCTURE IN COMPUTER SCIENCE, USED IN VARIO
 
 > Reversing the list: O(n) - Linear time complexity because you need to traverse the entire list and reverse the pointers.
 
+> Browser History:--
 
 
 ................................Memory Allocation........................
@@ -759,17 +760,18 @@ console.log(sparseArray[999]); // Output: 'last'
  
     and swaps them if they are in the wrong order.
  
- ->  The pass through the list is repeated until the list is sorted.
+ -> The pass through the list is repeated until the list is sorted.
 
  -> The algorithm gets its name from the way smaller or larger elements "bubble" to the top of the list.
 
- ->Bubble Sort has a time complexity of O(n^2) in the worst and average cases,
+ -> Bubble Sort has a time complexity of O(n^2) in the worst and average cases,
  
-   where n is the number of elements in the array.
+    where n is the number of elements in the array.
+  
+ -> The best case time complexity is O(n) when the input array is already sorted
 
  -> The space complexity of Bubble Sort is O(1),
-  
- ->  The best case time complexity is O(n) when the input array is already sorted
+
 
 
 
@@ -789,16 +791,17 @@ console.log(sparseArray[999]); // Output: 'last'
  ................................Selection Sort............................................
 
  -> Selection Sort is a simple sorting algorithm that divides the input list into two parts:
-    ->  the sublist of items already sorted and
-    ->  the sublist of items remaining to be sorted that occupy the rest of the list. 
+
+             -->  the sublist of items already sorted and
+             -->  the sublist of items remaining to be sorted that occupy the rest of the list. 
 
  -> Initially, the sorted sublist is empty and the unsorted sublist is the entire input list.
 
  -> The algorithm proceeds by finding the smallest (or largest, depending on the sorting order) element in the unsorted sublist,
   
-  swapping it with the leftmost unsorted element (putting it in sorted order),
+    swapping it with the leftmost unsorted element (putting it in sorted order),
   
-  and moving the sublist boundaries one element to the right.
+    and moving the sublist boundaries one element to the right.
 
 -> The time complexity of Selection Sort is O(n^2) in all cases (best, average, and worst)
 
@@ -813,7 +816,7 @@ console.log(sparseArray[999]); // Output: 'last'
 
 -> It works by selecting a 'pivot' element from the array and partitioning the other elements into two sub-arrays,
 
-  according to whether they are less than or greater than the pivot
+   according to whether they are less than or greater than the pivot
 
 -> The time complexity of Quick Sort in the average case is O(n log n),worst case O(n^2).
 
@@ -847,7 +850,7 @@ console.log(sparseArray[999]); // Output: 'last'
         
         >> Peek or Top: Returns the top element of the stack.
         
-        >> isEmpty: Returns true if the stack is empty, else false.
+        >> isEmpty : Returns true if the stack is empty, else false.
 
 -> Push, Pop, Peek, isEmpty, and Size operations all have a time complexity of O(1) 
   
@@ -882,7 +885,7 @@ console.log(sparseArray[999]); // Output: 'last'
     >>>>>>>>>> Types <<<<<<<<<<<<<<<<<<
 
      >> Standard Stack: The most basic type of stack, where elements are added (pushed) at the top
-                         and removed (popped) from the top.
+                        and removed (popped) from the top.
      
      >> Min Stack: A stack that keeps track of the minimum element in the stack at all times. 
                    This is useful in scenarios where you need to quickly find the minimum element in a stack.
@@ -908,12 +911,13 @@ console.log(sparseArray[999]); // Output: 'last'
 
 -> The operations typically performed on a queue include:
 
-       -> Enqueue: Adds an element to the end of the queue.
-       -> Dequeue: Removes an element from the front of the queue.
-       -> Front: Gets the front item from the queue.
-       -> Rear: Gets the last item from the queue.
-       -> isEmpty: Checks if the queue is empty.
-       -> isFull: Checks if the queue is full.
+       -> Enqueue : Adds an element to the end of the queue.
+       -> Dequeue : Removes an element from the front of the queue.
+       -> Front   : Gets the front item from the queue.
+       -> Rear    : Gets the last item from the queue.
+       -> isEmpty : Checks if the queue is empty.
+       -> isFull  : Checks if the queue is full.
+
 -> Enqueue, Dequeue, Front, Rear, isEmpty, and isFull operations all have a time complexity of O(1) 
    
   because they involve a constant number of operations regardless of the size of the queue.       
@@ -923,7 +927,7 @@ console.log(sparseArray[999]); // Output: 'last'
  >>>>>>>>> Applications <<<<<<<<<<<<<<<
    
    >> Task Scheduling: Queues are used in operating systems to manage tasks. 
-                      Each task is placed in a queue, and the operating system processes them in the order they were added.
+                       Each task is placed in a queue, and the operating system processes them in the order they were added.
 
    >> Print Spooler: In computer printing, the print spooler uses a queue to manage print jobs. 
                      When a print job is submitted, it is added to the queue.
@@ -941,19 +945,19 @@ console.log(sparseArray[999]); // Output: 'last'
 
    >>>>>>>>>  Types of Queue  <<<<<<<<<<<<
 
-  >> Standard Queue: The most basic type of queue, where elements are added at the rear and removed from the front.
+  >> Standard Queue : The most basic type of queue, where elements are added at the rear and removed from the front.
 
-  >> Priority Queue: A queue where elements are assigned a priority.
+  >> Priority Queue : A queue where elements are assigned a priority.
                       Elements with higher priority are dequeued before elements with lower priority. 
                       If two elements have the same priority, they are dequeued according to their order in the queue.
 
-  >> Circular Queue: A queue that is implemented as a circular buffer,
+  >> Circular Queue : A queue that is implemented as a circular buffer,
                       where the last position in the buffer is connected back to the first position.
                       This allows for efficient use of memory and can be useful in scenarios where the queue size is fixed.
   
   >> Double-Ended Queue (Deque): A queue that allows insertion and removal of elements from both ends. 
                                  This is not a standard queue but is a more flexible data structure
-                                  that can be used in various applications.
+                                 that can be used in various applications.
 
 ...................................Peek..........................................
 
@@ -962,8 +966,8 @@ console.log(sparseArray[999]); // Output: 'last'
 
 .............................. Stable And Unstable.........................
 
- -> A sorting algorithm is considered stable if two objects with equal keys appear in the same order in the sorted output 
-    as they appear in the input array to be sorted.
+ -> A sorting algorithm is considered stable if two objects with equal keys appear in the same order
+    in the sorted output as they appear in the input array to be sorted.
   
  -> Conversely, an unstable sorting algorithm does not guarantee this property.
 
@@ -1006,9 +1010,9 @@ console.log(sparseArray[999]); // Output: 'last'
 -> A deterministic algorithm is one whose output is uniquely determined by its input. 
 
 -> Given the same input, a deterministic algorithm will always produce the same output, 
-  and it will complete in a finite amount of time. 
+   and it will complete in a finite amount of time. 
   
- -> Deterministic algorithms are predictable and repeatable. 
+-> Deterministic algorithms are predictable and repeatable. 
  
  >>>>> Examples of deterministic algorithms include:
 
@@ -1041,6 +1045,7 @@ console.log(sparseArray[999]); // Output: 'last'
 ..........................Stack Underflow Vs Stack Overflow.......................
 
 -> "stack underflow" and "stack overflow" are conditions that can occur during the execution of a program,
+
      particularly when operations are performed on a stack
 
 .................................Stack Underflow ..........................
@@ -1069,7 +1074,7 @@ console.log(sparseArray[999]); // Output: 'last'
   
  -> This can happen in scenarios where there is a recursive function call that does not have a proper base case, 
     leading to an infinite recursion, or when a large amount of data is pushed onto the stack without checking
-   if there is enough space.
+    if there is enough space.
 
  -> Example Scenario: A program recursively calls a function without a proper base case, leading to an infinite recursion.
 
@@ -1079,6 +1084,7 @@ console.log(sparseArray[999]); // Output: 'last'
 
  >>> In some cases, the program might continue to run but with unexpected behavior,
      as it tries to access memory that it shouldn't.
+
  >>> In severe cases, a stack overflow can lead to a program crash or, in the worst-case scenario, a system crash.
 
 
@@ -1089,58 +1095,14 @@ console.log(sparseArray[999]); // Output: 'last'
 
  >>>> Three main steps:
 
-       >> Divide: Break the problem into smaller subproblems.
-       >> Conquer: Solve each subproblem independently.
-       >> Combine: Merge the solutions of the subproblems to solve the original problem.
+       >> Divide  : Break the problem into smaller subproblems.
+       >> Conquer : Solve each subproblem independently.
+       >> Combine : Merge the solutions of the subproblems to solve the original problem.
 
   -> This strategy is widely used in various algorithms,
      including sorting (e.g., merge sort, quicksort), 
      searching (e.g., binary search), 
      and graph algorithms (e.g., depth-first search).
-
- .............................Hash Table ...............................
-
--> A hash table, also known as a hash map, is a data structure that implements an associative array abstract data type,
-   a structure that can map keys to values.
-
--> It uses a hash function to compute an index into an array of buckets or slots,
-   from which the desired value can be found. 
-   
--> Hash tables are widely used in computer science due to their efficiency in lookup,
-   insertion, and deletion operations.   
-
-  >>>>>>>>> Applications of Hash Tables <<<<<<<<<<<<<< 
-
-    >>> Database Indexing: Hash tables are used in database systems to index data.
-                          They allow for fast retrieval of records based on keys,
-                           significantly speeding up data access.
-    
-    >>> Caching: Hash tables are used in caching mechanisms to store and retrieve data quickly.
-                For example, web browsers use hash tables to cache web pages,
-                reducing the need to re-fetch data.
-
-    >>> String Matching: Hash tables are used in algorithms like the Rabin-Karp algorithm for string matching,
-                         which allows for efficient searching of patterns within text.
-
-    >>> Counting Frequencies: Hash tables can be used to count the frequency of elements in a collection,
-                              such as in the counting sort algorithm.
-    
-    >>> Deduplication: In data processing, hash tables can be used to remove duplicates from a dataset by using the
-                       hash table to track the presence of elements.
-   
-    >>> Symbol Tables: In compilers and interpreters, hash tables are used as symbol tables to store variable names and 
-        their corresponding values.
-
-    >>> Cryptography: Hash tables are used in cryptographic algorithms for storing and retrieving keys.
-
-    >>> Websites and Web Applications: Hash tables are used in web development for session management,
-                                       where they store session IDs and their corresponding user data.
-   
-    >>> Networking: In network protocols, hash tables are used for routing tables, 
-                     where they map IP addresses to network interfaces.
-
-    >>> Machine Learning: Hash tables are used in machine learning for feature extraction and dimensionality reduction, 
-                          such as in the use of hash functions in locality-sensitive hashing (LSH) for nearest neighbor search.
 
 
 ............................Pros of Using Linked Lists for Stacks...........................
@@ -1155,7 +1117,7 @@ console.log(sparseArray[999]); // Output: 'last'
                       with a Linked List are very fast, with a time complexity of O(1).
                       This is because these operations only involve updating a few pointers.
  
- >>>Ease of Implementation: Implementing a stack using a Linked List is straightforward,
+ >>> Ease of Implementation: Implementing a stack using a Linked List is straightforward,
                             as it involves managing a head pointer and performing operations at the head of the list.
 
 
@@ -1168,7 +1130,7 @@ console.log(sparseArray[999]); // Output: 'last'
                             especially when the maximum size of the queue is unknown or can change.
 
 >>> Fast Enqueue and Dequeue Operations: For a queue implemented with a Linked List, 
-                                        enqueue (insertion at the end) and dequeue (removal from the front) operations are fast,
+                                         enqueue (insertion at the end) and dequeue (removal from the front) operations are fast,
                                          with a time complexity of O(1). This is because these operations only involve updating 
                                          a few pointers.
  
@@ -1198,13 +1160,60 @@ console.log(sparseArray[999]); // Output: 'last'
 
  >>>>>>>>>>>>>>  Characteristics of a Double-Ended Queue
 
-            >>> Dynamic Size: Like other dynamic data structures,
+            >> Dynamic Size: Like other dynamic data structures,
                              a DEQUE can grow and shrink in size as elements are added or removed.
+
             >> Efficient Memory Usage: DEQUEs can be more memory-efficient than arrays or other data structures 
-                                      for certain operations, especially when the maximum size is unknown or can change.
+                                       for certain operations, especially when the maximum size is unknown or can change.
 
             >> Flexibility: The ability to add or remove elements from both ends provides flexibility in
                              how data is managed and accessed.
+
+
+ .............................Hash Table ...............................
+
+-> A hash table, also known as a hash map, is a data structure that implements an associative array abstract data type,
+   a structure that can map keys to values.
+
+-> It uses a hash function to compute an index into an array of buckets or slots,
+   from which the desired value can be found. 
+   
+-> Hash tables are widely used in computer science due to their efficiency in lookup,
+   insertion, and deletion operations.   
+
+  >>>>>>>>> Applications of Hash Tables <<<<<<<<<<<<<< 
+
+    >>> Database Indexing: Hash tables are used in database systems to index data.
+                           They allow for fast retrieval of records based on keys,
+                           significantly speeding up data access.
+    
+    >>> Caching: Hash tables are used in caching mechanisms to store and retrieve data quickly.
+                 For example, web browsers use hash tables to cache web pages,
+                 reducing the need to re-fetch data.
+
+    >>> String Matching: Hash tables are used in algorithms like the Rabin-Karp algorithm for string matching,
+                         which allows for efficient searching of patterns within text.
+
+    >>> Counting Frequencies: Hash tables can be used to count the frequency of elements in a collection,
+                              such as in the counting sort algorithm.
+    
+    >>> Deduplication: In data processing, hash tables can be used to remove duplicates from a dataset by using the
+                       hash table to track the presence of elements.
+   
+    >>> Symbol Tables: In compilers and interpreters, hash tables are used as symbol tables to store variable names and 
+        their corresponding values.
+
+    >>> Cryptography: Hash tables are used in cryptographic algorithms for storing and retrieving keys.
+
+    >>> Websites and Web Applications: Hash tables are used in web development for session management,
+                                       where they store session IDs and their corresponding user data.
+   
+    >>> Networking: In network protocols, hash tables are used for routing tables, 
+                    where they map IP addresses to network interfaces.
+
+    >>> Machine Learning: Hash tables are used in machine learning for feature extraction and dimensionality reduction, 
+                          such as in the use of hash functions in locality-sensitive hashing (LSH) for nearest neighbor search.
+
             
 
  .......................Hash Functions ..............................           
@@ -1396,11 +1405,12 @@ console.log(sparseArray[999]); // Output: 'last'
 
  -> The load factor in the context of hash tables is a measure of how full the hash table is.
   
-->It is calculated as the ratio of the number of entries in the hash table to the total number of slots available in the table.
+ -> It is calculated as the ratio of the number of entries in the hash table to the total number of slots available in the table.
 
--> The load factor is a crucial metric because it directly influences the performance and efficiency of the hash table.
+ -> The load factor is a crucial metric because it directly influences the performance and efficiency of the hash table.
 
  >>>>>> Importance of Load Factor
+ 
           >>> Performance: As the load factor increases, the likelihood of collisions also increases,
                            which can degrade the performance of the hash table.
                            Collisions can lead to longer search times, as the hash table needs to resolve these collisions 
@@ -1429,3 +1439,771 @@ console.log(sparseArray[999]); // Output: 'last'
                                        and cuckoo hashing can help in reducing the impact of collisions.       
                                        
                                                        
+
+
+...................................TREE ...................................
+
+ -> Trees are a fundamental data structure in computer science and are widely used in various applications
+    within Data Structures and Algorithms (DSA).
+
+ -> They are hierarchical structures that consist of nodes, where each node has a value and 
+    a list of references to other nodes (its children).
+   
+ -> The top node is called the root, and the nodes with no children are called leaves.
+ 
+ -> Trees are used to represent hierarchical relationships between objects, such as file systems,
+    organizational structures, and more.
+
+
+>>>> Applications of Trees in DSA <<<< 
+ 
+    >> File Systems: Trees are used to represent file systems where each node represents a file or a directory. 
+                     The root node represents the root directory, and each child node represents a subdirectory 
+                     or a file within the directory.
+    
+    >> Expression Trees: In compilers and interpreters, expression trees are used to represent expressions in a way 
+                         that is easy to evaluate.
+                         Each node in the tree represents an operator or an operand.
+    
+    >> Decision Trees: In machine learning and artificial intelligence, decision trees are used to model decisions 
+                       and their possible consequences. 
+                       They are particularly useful in classification and regression tasks.
+    
+    >> Network Routing: In computer networks, trees are used to represent the routing tables.
+                        Each node represents a router, and the edges represent the connections between routers.
+ 
+    >> Syntax Trees: In compilers, syntax trees are used to represent the structure of a program.
+                     Each node represents a construct in the programming language, such as a function, a loop, or an if-else statement.
+
+    >> Database Indexing: In databases, trees are used to index data for faster retrieval.
+                          B-trees, for example, are used in many database systems to store data in a way that 
+                          allows for efficient searching, insertion, and deletion.
+    
+    >> Heap Data Structure: Heaps, which are a type of binary tree, are used to implement priority queues.
+                            In a heap, the parent node is always greater (in a max heap) or smaller (in a min heap) than its children.
+
+    >> Graph Algorithms: Trees are used in various graph algorithms, such as depth-first search (DFS) and
+                         breadth-first search (BFS), to traverse or search through graphs.
+
+
+ ...............................Complete Tree,Full Tree,Perfect Tree...........................   
+
+   -> In the context of trees in Data Structures and Algorithms (DSA), the terms "complete tree," "full tree," and "perfect tree" 
+      refer to different types of trees based on their structure and the number of children each node can have. 
+   
+   ->Understanding these terms is crucial for implementing and using trees effectively in various applications.                  
+
+
+...................................Complete Tree.........................
+
+   -> A complete tree is a tree in which every level, except possibly the last, is completely filled,
+        and all nodes are as far left as possible. 
+   
+   ->In other words, every level of the tree is fully populated except for the last level, which is filled from left to right.
+
+   >>> Example 
+
+                1                 1
+               / \
+              2   3
+             / \ / \ 
+            4  5 6  7
+   -> This tree is complete because every level is fully populated except for the last level, which is filled from left to right.
+
+
+...................................Full Tree.........................
+
+   -> A full tree is a tree in which every node has either 0 or 2 children.
+   
+   -> In other words, every node is either a leaf node (has no children) or a node with two children.
+
+     >>> Example 
+
+                  1
+                 / \
+                2   3
+               / \ / \
+              4  5 6  7
+
+   -> This tree is full because every node has either 0 or 2 children.
+
+...................................Perfect Tree.........................
+ 
+ -> A perfect tree is a tree in which all interior nodes have two children and all leaves have the same depth or same level.
+ 
+ -> In other words, it is a tree that is both complete and full.
+
+    >>> Example 
+
+                  1
+                 / \
+                2   3
+               / \ / \
+              4  5 6  7
+   
+   -> This tree is perfect because it is both complete (every level is fully populated except for the last level,
+      which is filled from left to right) and full (every node has either 0 or 2 children).          
+
+
+..................................Self-Balancing Tree ....................................
+
+ -> A self-balancing binary search tree (BST) is a binary search tree that automatically keeps its height (or depth) small
+   in the face of arbitrary item insertions and deletions. 
+ 
+ -> This is achieved by rebalancing the tree after insertions and deletions to ensure that the tree remains approximately balanced,
+    with the height of the tree being logarithmic in the number of nodes.
+
+ -> This property ensures that operations like search, insert, and delete can be performed efficiently, with time complexity of
+     O(log n), where n is the number of nodes in the tree.
+
+  >>> Types of Self-Balancing Trees
+ 
+   --> There are several types of self-balancing trees, each with its own method of balancing the tree.
+
+    -> AVL Trees: Named after their inventors Adelson-Velsky and Landis, 
+                  AVL trees are self-balancing binary search trees that maintain their balance by ensuring that for every node,
+                  the heights of the left and right subtrees differ by at most one.
+                  This property ensures that the tree remains balanced, with the height of the tree being logarithmic in the 
+                  number of nodes.
+    -> Red-Black Trees: Red-Black Trees are a type of self-balancing binary search tree where each node stores an extra 
+                        bit for denoting the color of the node, either red or black.
+                        The tree is balanced by ensuring that the path from the root to the farthest leaf is no more than 
+                        twice as long as the path from the root to the nearest leaf.
+                        This property, along with the coloring rules, ensures that the tree remains approximately balanced.
+    
+    -> B-Trees: B-Trees are a generalization of binary search trees that are used in databases and file systems.
+               They are self-balancing and allow for efficient insertion, deletion, and search operations.
+               B-Trees maintain their balance by ensuring that all leaves are at the same depth and that the tree is filled 
+               to a certain extent before splitting.
+   
+    -> Splay Trees: Splay Trees are a type of self-balancing binary search tree that move a node to the root of the tree 
+                    after each access.
+                    This operation helps to keep the tree balanced by ensuring that frequently accessed nodes are closer 
+                    to the root.
+
+   >>>> Advantages of Self-Balancing Trees
+ 
+       -> Efficiency: Self-balancing trees ensure that the tree remains balanced, 
+                      which guarantees that operations like search, insert, and delete can be performed in O(log n) time.
+
+       -> Flexibility: Different types of self-balancing trees can be chosen based on the specific requirements of the application,
+                       such as the need for efficient insertions and deletions or the need for efficient searches.                 
+.................................Binary Search Trees (BST).........................
+
+>> Insertion: The average and worst-case time complexity for insertion in a BST is O(log n) for a balanced tree 
+               and O(n) for an unbalanced tree.
+               The best-case time complexity is O(1) when the node is inserted at the root.
+
+>> Deletion: The average and worst-case time complexity for deletion in a BST is O(log n) for a balanced tree
+             and O(n) for an unbalanced tree.
+             The best-case time complexity is O(1) when the node is deleted from the root.
+
+>> Searching: The average and worst-case time complexity for searching in a BST is O(log n) for a balanced tree
+              and O(n) for an unbalanced tree.
+
+
+.......................................Heaps..............................
+
+-> Heaps are a specialized tree-based data structure that can be used in various applications within computer science
+   and software engineering.
+
+-> They are particularly useful for implementing priority queues, 
+   which are data structures that allow elements to be inserted with a priority and then removed in order of priority.
+
+->   Heaps can be of two types: Min-Heap and Max-Heap.
+
+>>> Types of Heaps 
+  
+  >> Min-Heap: In a Min-Heap, the parent node is always less than or equal to its child nodes.
+               This property ensures that the node with the smallest value is always at the root of the heap.
+               Min-Heaps are commonly used in algorithms that need to find the minimum element efficiently.
+  
+  >> Max-Heap: In a Max-Heap, the parent node is always greater than or equal to its child nodes.
+               This property ensures that the node with the largest value is always at the root of the heap.
+               Max-Heaps are commonly used in algorithms that need to find the maximum element efficiently.
+
+>>> Applications of Heaps
+    
+    >> Priority Queues: Heaps are the underlying data structure for priority queues.
+                        They allow elements to be inserted with a priority and then removed in order of priority.
+                        This is particularly useful in scheduling tasks, 
+                        where tasks with higher priority should be executed before tasks with lower priority.
+    
+    >> Graph Algorithms: Heaps are used in graph algorithms such as Dijkstra's algorithm for finding the shortest path in a graph.
+                         The algorithm maintains a priority queue of nodes to visit,
+                         where the node with the shortest distance from the source is always at the top of the heap.
+    
+    >> Sorting Algorithms: Heaps are used in algorithms like heapsort, which is an efficient sorting algorithm with
+                           a time complexity of O(n log n).
+                           Heapsort works by building a max-heap from the input data and
+                           then repeatedly removing the maximum element from the heap and inserting it into a sorted array.
+
+    >> Data Compression: Heaps are used in algorithms for data compression, such as Huffman coding,
+                         where the frequency of each character in the data is used to create a priority queue.
+                         The characters with higher frequency are given higher priority,
+                         which helps in achieving efficient compression.
+
+    >> Memory Management: In operating systems, heaps are used for dynamic memory allocation.
+                          The heap is a region of a computer's memory space that is used for dynamic memory allocation.
+                         The heap is managed by the programmer, and it grows and shrinks as needed.
+
+>>> Time Complexity for Heap Operations
+    
+     >> Insertion: O(log n)
+     >> Deletion (Min-Heap): O(log n)
+     >> Deletion (Max-Heap): O(log n)
+     >> Searching: O(n)
+     >> Heapify: O(log n)
+
+>>> Binomial Heap 
+ 
+   -> A binomial heap is a type of priority queue data structure that supports the following operations efficiently: 
+    insertion, deletion, and finding the minimum element.
+   
+   -> It is named after its structure, which is based on the binomial theorem.
+   
+   -> The binomial heap is a generalization of the binary heap, where each node can have more than two children.
+
+    >>> Operations on a Binomial Heap
+
+       -> Insertion: To insert a new element into a binomial heap, a new binomial tree of order 1 is created with the
+                     new element as its root.
+                     This new tree is then merged with the existing trees in the heap.
+       
+       -> Deletion: To delete the minimum element (the root of the tree with the smallest order), 
+                    the tree is removed from the heap, and its children are merged back into the heap.
+                    The merging process involves combining trees of the same order until only one tree of each order remains.
+       
+       -> Finding the Minimum: The minimum element is the root of the tree with the smallest order in the heap.
+
+    >>> Time Complexity 
+        > Insertion : O(log n)
+        > Deletion  :  O(log n)
+        > Finding the Minimum : O(1)
+
+
+......................................Graph...................................
+
+-> Graphs are a fundamental data structure in computer science, used to model pairwise relations between objects.
+
+-> They are versatile and can be used in a wide range of applications.
+
+-> Graphs can be categorized into two main types: directed and undirected.
+
+>>>> Types of Graphs
+  
+   >>> Directed Graphs (Digraphs): In a directed graph, edges have a direction, meaning that the relationship between two nodes
+                                   is not symmetric.
+                                   For example, a directed graph can represent a one-way road network where each road has a direction.
+   
+   >>> Undirected Graphs: In an undirected graph, edges do not have a direction,
+                          meaning that the relationship between two nodes is symmetric.
+                          For example, an undirected graph can represent a social network where if person A is a friend 
+                          of person B, then person B is also a friend of person A.
+
+>>> Applications of Graphs
+                         
+    >> Social Networks: Graphs are used to model social networks, where nodes represent individuals,
+                        and edges represent relationships between them.
+                        This can be used to analyze social structures, find influential individuals, or recommend friends.
+    
+    >> Web Pages: Graphs are used to represent web pages and their links.
+                  This can be used for web crawling, page ranking, or finding the shortest path between two web pages.
+
+    >> Transportation Networks: Graphs are used to represent road networks, where nodes represent intersections, 
+                               and edges represent roads.
+                               This can be used for route planning, traffic analysis, or finding the shortest path between
+                               two locations.
+    
+    >> Computer Networks: Graphs are used to represent computer networks, where nodes represent computers,
+                          and edges represent connections between them.
+                          This can be used for network routing, fault detection, or network security.
+
+    >> Biological Networks: Graphs are used to represent biological networks, such as protein-protein interaction networks 
+                            or gene regulatory networks.
+                            This can be used for drug discovery, understanding disease mechanisms, or predicting protein structures.
+
+    >> Electrical Circuits: Graphs are used to represent electrical circuits, where nodes represent components,
+                            and edges represent connections between them.
+                            This can be used for circuit analysis, design, or fault detection.
+    
+    >> Algorithms and Data Structures: Graphs are used in various algorithms and data structures,
+                                       such as shortest path algorithms (Dijkstra's, Bellman-Ford),
+                                       minimum spanning tree algorithms (Kruskal's, Prim's),
+                                       and graph traversal algorithms (depth-first search, breadth-first search).   
+
+  
+   >>> Time Complexity 
+     
+     >> Adding a Vertex: O(1)
+
+     >> Adding an Edge: O(1) for adjacency matrix, 
+                        O(1) for each vertex in adjacency list
+
+     >> Removing a Vertex: O(V^2) for adjacency matrix,
+                           O(V + E) for adjacency list
+
+     >> Removing an Edge: O(1) for adjacency matrix,
+                          O(E) for adjacency list
+
+     >> Searching for a Vertex: O(V) for adjacency matrix,
+                                O(1) for adjacency list
+
+     >> Searching for an Edge: O(1) for adjacency matrix,
+                               O(E) for adjacency list
+
+
+  ............................Breadth-First Search (BFS)...........................
+
+  -> BFS starts traversal from the root node (or any arbitrary node of a graph, sometimes referred to as a 'source node') 
+     and explores the neighbor nodes at the present depth prior to moving on to nodes at the next depth level.
+ 
+  -> BFS visits nodes in a level-by-level manner (i.e., visiting the nodes in the same level before moving to the next level).
+
+    >> Time Complexity:
+
+    -> The time complexity of BFS is O(V + E), where V is the number of vertices and E is the number of edges in the graph.
+
+
+ ............................Depth-First Search (DFS) .............................
+ 
+  -> DFS starts traversal from the root node (or any arbitrary node of a graph) and explores as far as possible along each branch
+     before backtracking.
+  
+  ->DFS visits nodes in a depth-first manner, exploring as deep as possible along each branch before backtracking.
+
+    >>> Time Complexity:
+
+      -> The time complexity of DFS is O(V + E), where V is the number of vertices and E is the number of edges in the graph.
+
+
+ >>>> Key Differences  <<<<<
+
+   -> Order of Visiting Nodes: BFS visits nodes level by level, 
+                               while DFS visits nodes as deep as possible along each branch before backtracking.
+
+   -> Data Structure Used: BFS uses a queue to keep track of nodes to visit next, while DFS uses a stack.
+
+   -> Use Cases: BFS is often used for finding the shortest path in an unweighted graph, 
+                 while DFS is used for tasks like topological sorting, pathfinding in a maze, and detecting cycles.     
+
+   >>> Example  
+       
+        A -- B -- C
+        |    |
+        D -- E
+      
+       --> BFS Traversal Starting from A:
+
+           ->Visit A, then B, then D, then E, then C.
+
+       --> DFS Traversal Starting from A:
+
+           -> Visit A, then B, then C, then E, then D.
+ 
+.............................Isolated Vertex  And Weighted Graph ......................
+
+ -> In graph theory, the terms "isolated vertex" and "weighted graph" refer to specific characteristics of graphs.
+ 
+  >>> Isolated Vertex
+    
+    -> An isolated vertex (also known as a leaf node) is a vertex in a graph that has no edges connected to it.
+       In other words, it is a vertex that is not part of any edge.
+       In a graphical representation, an isolated vertex is a node that stands alone without any lines (edges) 
+       connecting it to any other node.
+
+   >>> Example :-
+
+       A -- B
+            |
+            C
+
+  
+
+  >>> Weighted Graph 
+
+   -> A weighted graph is a graph in which each edge is assigned a numerical value or weight.
+   -> This weight can represent various things depending on the context, such as the cost of traveling between two nodes, 
+      the strength of a connection, or the distance between two points.
+
+   >>> Example :-   
+
+      A --1-- B
+      |       |
+      2       3
+      |       |
+      C --4-- D
+
+   >>> Graph Indexing
+     
+     -> Graph indexing is a technique used to improve the efficiency of graph operations, such as searching for vertices or edges,
+         by organizing the graph data in a way that makes these operations faster. 
+
+     -> Graph indexing can involve various strategies, including:
+   
+     -> Adjacency Lists: Each vertex maintains a list of its adjacent vertices.
+                         This is efficient for sparse graphs where the number of edges is much less than the number of vertices squared.
+     
+     -> Adjacency Matrices: A matrix is used to represent the graph, where the cell at the intersection of row i and column j 
+                            indicates the presence (or absence) of an edge between vertices i and j.
+                            This is efficient for dense graphs where the number of edges is close to the number of
+                            vertices squared.
+     
+     -> Edge Lists: A list of all edges in the graph, with each edge represented by a pair of vertices.
+                    This is efficient for graphs where the number of edges is much less than the number of 
+                    vertices squared and the graph is not dense.
+     
+     -> Incidence Matrices: A matrix where each row represents a vertex and each column represents an edge.
+                            The cell at the intersection of row i and column j indicates whether vertex i is incident to edge j.
+                            This is useful for sparse graphs and when the graph is undirected.
+
+   >>> Vertex Indexing
+     
+     -> Vertex indexing is a specific type of graph indexing that focuses on optimizing the access to vertices within the graph.
+
+     -> Vertex Arrays: An array where each element represents a vertex.
+                       The index of the array can be used as the vertex ID.
+                       This is efficient for dense graphs where the number of vertices is close to the number of edges.
+     
+     -> Vertex Lists: A list where each element represents a vertex.
+                      The position of the element in the list can be used as the vertex ID.
+                      This is efficient for sparse graphs where the number of vertices is much less than the number of edges.
+
+     -> Vertex Maps: A map (or dictionary) where each key-value pair represents a vertex and its associated data.
+                     The key can be used as the vertex ID.
+                     This is efficient for graphs where vertices have associated data that needs to be quickly accessed.
+     
+     -> Vertex Sets: A set where each element represents a vertex.
+                     This is efficient for operations that involve checking the presence of a vertex in the graph, 
+                     such as in algorithms that need to keep track of visited vertices.            
+
+   >>> Edge Indexing Strategies
+     
+    ->  Adjacency Lists: In an adjacency list representation, each vertex maintains a list of its adjacent vertices.
+                         This is efficient for sparse graphs where the number of edges is much less than the number of vertices squared.
+                         However, to index edges directly, you can maintain an additional data structure that maps each edge to its vertices.
+    
+    -> Adjacency Matrices: In an adjacency matrix representation, a matrix is used to represent the graph,
+                           where the cell at the intersection of row i and column j indicates the presence (or absence)
+                           of an edge between vertices i and j. This is efficient for dense graphs where the 
+                           number of edges is close to the number of vertices squared. 
+                           Edge indexing in this context is straightforward since the matrix itself serves as the index.
+    
+    -> Edge Lists: An edge list is a list of all edges in the graph, with each edge represented by a pair of vertices.
+                   This is efficient for graphs where the number of edges is much less than the number of vertices squared
+                   and the graph is not dense.
+                   Edge indexing in this context involves maintaining a list of edges, where each edge can be accessed by its
+                   position in the list.
+    
+    -> Incidence Matrices: An incidence matrix is a matrix where each row represents a vertex 
+                           and each column represents an edge.
+                           The cell at the intersection of row i and column j indicates whether vertex i is incident to edge j. This is useful for sparse graphs and when the graph is undirected. Edge indexing in this context involves accessing the matrix by the edge's row and column indices.
+
+  .............................. Trie ........................    
+
+  -> A trie, also known as a prefix tree, is a tree-like data structure that is used to store a dynamic set
+     or associative array where the keys are usually strings.
+  
+  -> Tries are particularly efficient for certain types of operations, such as searching for strings with a common prefix,
+     which can be very fast.
+
+  >>>> Types of Tries 
+   
+       >> Standard Tries: In a standard trie, each node represents a character of a string.
+                          The root node is empty, and each path from the root to a leaf node represents a string in the trie.
+                          Standard tries are simple to implement but can become large and inefficient for certain datasets.
+
+       >> Compressed Tries: Compressed tries are a variant of standard tries where nodes with a single child are merged 
+                            into a single node.
+                            This reduces the size of the trie and can make it more efficient for certain operations.
+
+  >>>> Applications of Tries
+
+    >> Autocomplete: Tries are widely used in autocomplete systems to quickly find all strings that start with a given prefix.
+                     This is particularly useful in applications like search engines, text editors, and IDEs.
+    
+    >> Spell Check: Tries can be used to implement spell checkers by storing all valid words in a trie.
+                    When a user types a word, the spell checker can quickly check if the word exists in the trie.
+  
+    >> IP Routing: In computer networks, tries can be used to implement IP routing tables.
+                   Each node in the trie represents a bit in the IP address, allowing for efficient routing of packets.
+
+    >> Telephone Directory: Tries can be used to store a telephone directory, where each node represents a digit in a phone number.
+                 This allows for efficient searching and insertion of phone numbers.
+    
+    >> Text Compression: Tries can be used in text compression algorithms to store the frequency of characters in a text. 
+                         This can be used to compress text by replacing common strings with shorter representations.
+                           
+
+
+ ............................. Trie Vs Hashtable ........................................                          
+
+ >>>> Trie
+  
+  >> Purpose: Tries are primarily used for storing strings and are particularly efficient for operations that involve 
+              finding strings with a common prefix.
+  
+  >> Structure: Tries are tree-like structures where each node represents a character of a string.
+                The root node is empty, and each path from the root to a leaf node represents a string in the trie.
+
+  >> Search Complexity: The time complexity for searching a string in a trie is O(m), where m is the length of the string.
+                        This is because each character in the string corresponds to a level in the trie.
+
+  >> Insertion Complexity: The time complexity for inserting a string into a trie is also O(m),
+                           as each character in the string corresponds to a level in the trie.
+  
+  >> Space Complexity: The space complexity of a trie is O(alphabet_size * key_length * N),
+                       where N is the number of keys in the trie.
+                       This can be quite space-efficient for certain datasets, especially when the keys have a common prefix.
+  
+  >> Use Cases: Tries are commonly used in applications like autocomplete systems, spell checkers, and IP routing tables.
+
+ >>>> Hash Table
+   
+   >> Purpose: Hash tables are used for storing key-value pairs and are efficient for operations that involve looking up 
+              values by their keys.
+   
+   >> Structure: Hash tables use a hash function to map keys to indices in an array.
+                 Collisions are resolved using techniques like chaining or open addressing.
+   
+   >> Search Complexity: The average time complexity for searching a key in a hash table is O(1),
+                         assuming a good hash function and proper handling of collisions.
+                         However, in the worst case (when all keys hash to the same index),
+                         the complexity can degrade to O(n), where n is the number of keys in the hash table.
+
+   >> Insertion Complexity: The average time complexity for inserting a key-value pair into a hash table is O(1),
+                            assuming a good hash function and proper handling of collisions.
+                            However, in the worst case, the complexity can degrade to O(n).
+  
+   >> Space Complexity: The space complexity of a hash table is O(n),
+                        where n is the number of key-value pairs stored in the hash table.
+   
+   >> Use Cases: Hash tables are widely used in various applications, including database indexing, 
+                 caching, and implementing sets and maps.
+
+ >>>> Comparison
+  
+   >> Use Case: Tries are more suitable for operations involving strings and prefixes,
+                while hash tables are more general-purpose for storing key-value pairs.
+   
+   >> Complexity: Tries have a predictable time complexity for operations involving strings,
+                  while hash tables have an average time complexity of O(1) but can degrade to O(n) in the worst case.
+
+   >> Space Efficiency: Tries can be more space-efficient for certain datasets, especially when the keys have a common prefix.
+                        Hash tables have a more predictable space complexity.
+
+   >> Implementation Complexity: Tries can be more complex to implement correctly, especially when dealing with collisions and 
+                                 ensuring the trie remains balanced.
+                                 Hash tables are generally simpler to implement.                
+
+
+....................Height of a Node ,Depth of a Node and Degree of a Node .........................
+
+>>> Height of a Node
+  
+   >> The height of a node in a tree or graph is the number of edges in the longest path from the node to a leaf node.
+  
+   >> In other words, it's the maximum distance from the node to any of its descendants.
+  
+   >> The height of a tree is the height of its root node.
+
+   >> Height of a Node: The number of edges in the longest path from the node to a leaf node.
+  
+   >> Height of a Tree: The height of the root node.
+
+>>> Depth of a Node
+
+  >> The depth of a node in a tree or graph is the number of edges in the path from the root node to the node.
+     It represents the distance from the root to the node.
+
+  >> Depth of a Node: The number of edges in the path from the root node to the node.
+
+  >> Depth of a Tree: The depth of the root node is 0, as it is the root.
+
+>>> Degree of a Node
+
+  >> The degree of a node in a graph is the number of edges connected to it.
+  
+  >> In other words, it's the number of adjacent nodes.
+
+  >> Degree of a Node: The number of edges connected to the node.
+
+  >>>> Comparison <<<<
+
+  >> Height vs. Depth: Height is about the distance from a node to its furthest leaf, 
+                while depth is about the distance from the root to a node.
+                Height is a measure of the "height" of a subtree rooted at a node,
+                and depth is a measure of the "depth" of a node in the tree.
+  
+  >> Degree: Degree is a measure of how many edges are connected to a node, regardless of its position in the tree or graph.
+
+
+
+  ..............................Shortest Path Algorithm............................
+
+  -> The shortest path algorithm is a fundamental algorithm in graph theory and computer science, 
+     used to find the shortest path between two nodes in a graph.
+ 
+  -> The most common shortest path algorithms are Dijkstra's algorithm and the Bellman-Ford algorithm.
+  
+  -> These algorithms are used in various applications, including routing protocols in computer networks,
+     pathfinding in video games, and finding the shortest route in maps.
+
+  >>> Dijkstra's Algorithm
+   
+    -> Dijkstra's algorithm is a greedy algorithm that finds the shortest path from a source node to all other nodes in a graph.
+    
+    -> It works by maintaining a set of nodes for which the shortest path from the source has already been determined 
+       and iteratively selecting the node with the smallest tentative distance from the source that has not yet been 
+       included in the set.
+
+      --> Time Complexity:
+
+        -> If the graph is represented using an adjacency matrix,
+           the time complexity is O(V^2), where V is the number of vertices.
+        -> If the graph is represented using an adjacency list and a priority queue,
+           the time complexity is O((V+E) log V), where E is the number of edges.
+
+  >>> Bellman-Ford Algorithm
+  
+     -> The Bellman-Ford algorithm is another algorithm used to find the shortest path from a single source vertex to all other
+        vertices in a graph.
+    
+     -> It can handle graphs with negative weight edges, unlike Dijkstra's algorithm, which assumes all edge weights are non-negative.
+
+     --> Time Complexity:
+
+        >> The time complexity of the Bellman-Ford algorithm is O(V*E), 
+           where V is the number of vertices and E is the number of edges.
+
+
+
+..................................Heapification..........................................
+
+-> Heapification is a process used in heap data structures, such as binary heaps, to ensure that the heap property is maintained.
+
+   The heap property for a binary heap is that for any given node i, the value of i is not smaller than the values of its children. 
+   There are two main approaches to heapification: top-down and bottom-up.
+
+ >>>> Top-Down Heapification
+    
+   -> Top-down heapification is the process of maintaining the heap property from the root down to the leaves.
+      This approach is typically used in operations that involve removing the root element (e.g., in a priority queue),
+      which can potentially disrupt the heap property.
+
+   >>> Steps for Top-Down Heapification:
+
+     -> Remove the root: The root element is removed from the heap.
+     -> Heapify the root: The last element in the heap is moved to the root position.
+     -> Sift down: The new root element is sifted down to its correct position to restore the heap property.
+                   This involves comparing the root with its children and swapping it with the larger child if necessary.
+                   This process is repeated until the root is in its correct position or there are no more children to compare it with.
+     -> Time Complexity: The time complexity of top-down heapification is O(log n), where n is the number of elements in the heap.
+                         This is because, in the worst case, the root element may need to be sifted down through the entire height 
+                         of the heap.
+
+  >>>> Bottom-Up Heapification
+
+     -> Bottom-up heapification is the process of maintaining the heap property from the leaves up to the root.
+     
+     -> This approach is typically used in operations that involve inserting a new element into the heap, which can potentially 
+        disrupt the heap property.
+
+    >>> Steps for Bottom-Up Heapification:
+
+       -> Insert the new element: The new element is inserted at the end of the heap.
+       -> Sift up: The new element is sifted up to its correct position to restore the heap property.
+                   This involves comparing the new element with its parent and swapping it with the parent if necessary.
+                   This process is repeated until the new element is in its correct position or it becomes the root.
+
+       -> Time Complexity: The time complexity of bottom-up heapification is O(log n), 
+                           where n is the number of elements in the heap.
+                           This is because, in the worst case, the new element may need to be sifted up through the entire
+                            height of the heap.                       
+
+   >>>>>> Comparison
+
+      -> Top-Down Heapification is used when the root element is removed, which can disrupt the heap property.
+          -> It involves sifting down the new root to its correct position.
+      
+      -> Bottom-Up Heapification is used when a new element is inserted, which can disrupt the heap property.
+         It involves sifting up the new element to its correct position.                         
+
+
+
+...........................How To Check BST is a Subset of X ...........................
+
+-> To check if a binary search tree (BST) is a subset of another BST (let's call it BST X),
+   you can perform an in-order traversal of both trees and compare the elements.
+
+-> The idea is to ensure that every element in the first BST (let's call it BST Y) is also present in BST X. 
+
+ >>> Here's a step-by-step approach to achieve this:
+
+   >> Step 1: In-Order Traversal of BST Y
+              Perform an in-order traversal of BST Y. This traversal visits the nodes in ascending order.
+
+   >> Step 2: In-Order Traversal of BST X
+              Perform an in-order traversal of BST X. This traversal visits the nodes in ascending order.
+
+   >> Step 3: Compare the Elements
+              While traversing both trees, compare the elements of BST Y with those of BST X.
+              If an element from BST Y is not found in BST X, then BST Y is not a subset of BST X.
+
+   >> Step 4: Check for BST Y's Completeness
+              After the traversal, if all elements of BST Y are found in BST X, and BST Y has fewer elements than BST X,
+              then BST Y is a subset of BST X.
+-> Time Complexity
+   
+   The time complexity of this approach is O(n + m), 
+   where n is the number of nodes in BST Y and m is the number of nodes in BST X.
+   This is because each tree is traversed once.
+
+-> Space Complexity
+   
+   The space complexity is O(n + m), as we need to store the elements of both trees in lists for comparison. 
+
+
+.........................Adjacency Lists And Adjacency Matrices........................
+
+ >>> Adjacency List 
+
+  -> An adjacency list is a collection of unordered lists used to represent a finite graph.
+     Each list describes the set of neighbors of a vertex in the graph.
+
+   >> Advantages:
+
+     -> Space Efficiency: Adjacency lists are space-efficient for sparse graphs,
+                         where the number of edges is much less than the number of vertices squared.
+                         This is because each vertex only stores its neighbors, not all possible connections.
+     
+     -> Fast Operations: Adding an edge or removing an edge is fast because it involves adding or 
+                        removing an element from a list.
+   >> Disadvantages:
+
+      -> Slow Lookups: Checking if an edge exists between two vertices can be slow because it requires searching through 
+                       the list of one of the vertices.
+
+      -> Memory Overhead: Each vertex has a list of its neighbors, which can lead to higher memory usage compared 
+                          to adjacency matrices, especially for dense graphs.
+
+
+ >>> Adjacency Matrix
+
+   -> An adjacency matrix is a square matrix used to represent a finite graph.
+   -> The elements of the matrix indicate whether pairs of vertices are adjacent or not in the graph.
+
+   >> Advantages:
+
+      -> Fast Lookups: Checking if an edge exists between two vertices is fast because it involves accessing a single element 
+                       in the matrix.
+      -> Easy to Iterate: It's straightforward to iterate over all edges in the graph, which can be useful for certain algorithms.
+   
+   >>Disadvantages:
+
+      -> Space Inefficiency: Adjacency matrices are space-inefficient for sparse graphs, where the number of edges is much
+                             less than the number of vertices squared.
+                             This is because the matrix has a size of n x n, where n is the number of vertices,
+                             regardless of the actual number of edges.
+      -> Slow Operations: Adding an edge or removing an edge can be slow because it involves updating multiple elements 
+                          in the matrix.                     

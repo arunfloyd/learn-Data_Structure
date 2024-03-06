@@ -1,5 +1,4 @@
 //QuicK Sort
-
 //In Ascending order
 
 function quickSort(arr) {
@@ -20,12 +19,13 @@ function quickSort(arr) {
   return [...quickSort(left), pivot, ...quickSort(right)];
 }
 //Time Complexity
+
 // Avg Case = O(n log n)
 // Best  Case = O(n log n)
 // Worst Case = O(n^2)
 
-
 //Space Complexity
+
 // Avg Case = O(log n)
 // Worst Case = O(n)
 console.log(quickSort([57, 345, 231, 332]));

@@ -1,47 +1,45 @@
-class Stack{
-    constructor(){
-        this.stack =[]
+class Stack {
+  constructor() {
+    this.stack = [];
+  }
+  push(element) {
+    this.stack.push(element);
+  }
+  pop() {
+    if (this.isEmpty()) {
+      return "Stack is Empty ,Can't Perform Pop";
     }
-    push(element){
-        this.stack.push(element)
+    return this.stack.pop();
+  }
+  peek() {
+    if (this.isEmpty()) {
+      return "Stack is Empty ,Can't Perform peek";
     }
-    pop (){
-        if(this.isEmpty()){
-            return "Stack is Empty ,Can't Perform Pop"
-        }
-        return this.stack.pop()
+    return this.stack[this.size() - 1];
+  }
+  size() {
+    return this.stack.length;
+  }
+  isEmpty() {
+    return this.size === 0;
+  }
+  printStack() {
+    let stack = "";
+    for (let i = 0; i < this.size(); i++) {
+      stack += `${this.stack[i]} `;
     }
-    peek(){
-        if(this.isEmpty()){
-            return "Stack is Empty ,Can't Perform peek"
-        }
-        return this.stack[this.size()-1] 
-    }
-    size(){
-        return this.stack.length
-    }
-    isEmpty(){
-        return this.size === 0
-    }
-    printStack(){
-        let stack=""
-        for(let i=0;i<this.size();i++){
-          stack+=`${this.stack[i]} `
-        }
-        console.log(stack)
-    }
+    console.log(stack);
+  }
 }
 
+const stack = new Stack();
 
-const stack = new Stack()
+stack.push(10);
+stack.push(40);
+stack.push(31);
 
-stack.push(10)
-stack.push(40)
-stack.push(31)
-
-
-console.log(stack.peek())
-console.log(stack.pop())
-console.log(stack.peek())
-console.log(stack.size())
-stack.printStack()
+console.log(stack.peek());
+console.log(stack.pop());
+console.log(stack.peek());
+console.log(stack.size());
+stack.printStack();

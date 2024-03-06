@@ -17,7 +17,8 @@ const selectionSort = (arr) => {
   }
   return arr;
 };
-console.log(selectionSort([2,5,1,6,3]))
+
+console.log(selectionSort([2, 5, 1, 6, 3]));
 
 //Time = O(n^2)
 
