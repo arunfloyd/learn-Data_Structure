@@ -54,7 +54,7 @@ class BinarySearchTree {
   // 2. Visit the left subtree
   // 3. Visit the right subtree
 
-  preOrder(root) {f
+  preOrder(root) {
     if (root) {
       console.log(root.value);
       this.preOrder(root.left);
@@ -107,11 +107,98 @@ class BinarySearchTree {
       }
     }
   }
+  min(root) {
+    if (!root.left) {
+      return root.value;
+    } else {
+      return this.min(root.left);
+    }
+  }
+
+  max(root) {
+    if (!root.right) {
+      return root.value;
+    } else {
+      return this.max(root.right);
+    }
+  }
+
+  delete(value) {
+    this.root = this.deleteNode(this.root, value);
+  }
+
+  deleteNode(root, value) {
+    if (root === null) {
+      return root;
+    }
+    if (value < root.value) {
+      root.left = this.deleteNode(root.left, value);
+    } else if (value > root.value) {
+      root.right = this.deleteNode(root.right, value);
+    } else {
+      if (!root.left && !root.right) {
+        return null;
+      }
+
+      if (!root.left) {
+        return root.right;
+      } else if (!root.right) {
+        return root.left;
+      }
+
+      root.value = this.min(root.right);
+
+      root.right = this.deleteNode(root.right, root.value);
+    }
+
+    return root;
+  }
+  closestValue(target, root = this.root) {
+    let closest = root.value;
+    while (root !== null) {
+      if (Math.abs(target - root.value) < Math.abs(target - closest)) {
+        closest = root.value;
+      }
+
+      if (target < root.value) {
+        root = root.left;
+      } else if (target > root.value) {
+        root = root.right;
+      } else {
+        break;
+      }
+    }
+
+    return closest;
+  }
+  isValidBst() {
+    return this.checkBst(
+      this.root,
+      Number.NEGATIVE_INFINITY,
+      Number.POSITIVE_INFINITY
+    );
+  }
+
+  checkBst(root, min, max) {
+    if (root === null) {
+      return true;
+    }
+
+    if (root.value <= min || root.value >= max) {
+      return false;
+    }
+
+    return (
+      this.checkBst(root.left, min, root.value) &&
+      this.checkBst(root.right, root.value, max)
+    );
+  }
 }
 const bst = new BinarySearchTree();
 bst.insert(1);
 bst.insert(13);
 bst.insert(9);
+bst.delete(1);
 // bst.preOrder(bst.root)
 // bst.inOrder(bst.root);
 // bst.postOrder(bst.root);

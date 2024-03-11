@@ -1506,8 +1506,8 @@ console.log(sparseArray[999]); // Output: 'last'
                 1                 1
                / \
               2   3
-             / \ / \ 
-            4  5 6  7
+             / \   
+            4   5 
    -> This tree is complete because every level is fully populated except for the last level, which is filled from left to right.
 
 
@@ -1565,6 +1565,7 @@ console.log(sparseArray[999]); // Output: 'last'
                   the heights of the left and right subtrees differ by at most one.
                   This property ensures that the tree remains balanced, with the height of the tree being logarithmic in the 
                   number of nodes.
+                  
     -> Red-Black Trees: Red-Black Trees are a type of self-balancing binary search tree where each node stores an extra 
                         bit for denoting the color of the node, either red or black.
                         The tree is balanced by ensuring that the path from the root to the farthest leaf is no more than 

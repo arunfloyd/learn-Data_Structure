@@ -33,7 +33,7 @@ class Graph {
   hasEdge(vertex1, vertex2) {
     return (
       this.adjacencyList[vertex1].has(vertex2) &&
-      this.adjacencyList(vertex2).has(vertex1)
+      this.adjacencyList[vertex2].has(vertex1)
     );
   }
   display() {
@@ -61,7 +61,7 @@ class Graph {
   }
   dfs(startVertex) {
     const visited = new Set();
-  
+
     const dfsTraversal = (vertex) => {
       if (!visited.has(vertex)) {
         visited.add(vertex);
@@ -71,10 +71,9 @@ class Graph {
         }
       }
     };
-  
+
     dfsTraversal(startVertex);
   }
-  
 }
 
 const graph = new Graph();
