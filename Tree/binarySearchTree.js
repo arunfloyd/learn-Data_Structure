@@ -202,7 +202,6 @@ bst.delete(1);
 // bst.preOrder(bst.root)
 // bst.inOrder(bst.root);
 // bst.postOrder(bst.root);
-
 bst.levelOrder();
 console.log(bst.search(bst.root, 1));
 

@@ -52,7 +52,7 @@ class Graph {
         console.log(currentVertex);
 
         for (let neighbor of this.adjacencyList[currentVertex]) {
-          if (!visited.has(neighbor)) {
+          if (!visited.has(neighbor)) {   
             queue.push(neighbor);
           }
         }

@@ -1962,7 +1962,7 @@ console.log(sparseArray[999]); // Output: 'last'
  >>>> Hash Table
    
    >> Purpose: Hash tables are used for storing key-value pairs and are efficient for operations that involve looking up 
-              values by their keys.
+                values by their keys.
    
    >> Structure: Hash tables use a hash function to map keys to indices in an array.
                  Collisions are resolved using techniques like chaining or open addressing.
@@ -2179,7 +2179,7 @@ console.log(sparseArray[999]); // Output: 'last'
                          This is because each vertex only stores its neighbors, not all possible connections.
      
      -> Fast Operations: Adding an edge or removing an edge is fast because it involves adding or 
-                        removing an element from a list.
+                         removing an element from a list.
    >> Disadvantages:
 
       -> Slow Lookups: Checking if an edge exists between two vertices can be slow because it requires searching through 

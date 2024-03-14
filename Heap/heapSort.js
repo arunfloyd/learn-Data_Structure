@@ -49,7 +49,7 @@ class Heap {
          }
        }
     }
-   }
+}   
    
    function heapSort(arr) {
     const heap = new Heap();
@@ -68,7 +68,6 @@ class Heap {
    console.log(arr);
    
 
-// Summary  :- 
-
+// Summary  :
 // Time Complexity: O(n log n)
 // Space Complexity: O(1)

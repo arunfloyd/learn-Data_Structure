@@ -1,93 +1,89 @@
-class Node {
+class maxHeap {
   constructor() {
-    this.children = {};
-    this.isWordEnd = false;
+    this.data = [];
   }
-}
-class Trie {
-  constructor() {
-    this.root = new Node();
+  getParentIndex(i) {
+    return Math.floor((i - 1) / 2);
   }
-  insert(word) {
-    let curr = this.word;
-    for (let i = 0; i < word.length; i++) {
-      let insertData = word[i];
-      if (!(insertData in curr.children)) {
-        curr.children[insertData] = new Node();
+  getLeftChildIndex(i) {
+    return i * 2 + 1;
+  }
+  getRightChildIndex(i) {
+    // Corrected method name
+    return i * 2 + 2;
+  }
+  swap(i1, i2) {
+    const temp = this.data[i1];
+    this.data[i1] = this.data[i2];
+    this.data[i2] = temp;
+  }
+  push(key) {
+    this.data.push(key);
+    this.heapifyUp();
+  }
+  poll() {
+    // Renamed from pop to poll for clarity
+    if (this.data.length === 0) {
+      return null; // Handle empty heap case
+    }
+    const maxValue = this.data[0];
+    this.data[0] = this.data[this.data.length - 1];
+    this.data.pop();
+    this.heapifyDown();
+    return maxValue; // Return the removed maximum value
+  }
+  heapifyUp() {
+    let currentIndex = this.data.length - 1;
+    while (
+      currentIndex > 0 &&
+      this.data[currentIndex] > this.data[this.getParentIndex(currentIndex)]
+    ) {
+      this.swap(currentIndex, this.getParentIndex(currentIndex));
+      currentIndex = this.getParentIndex(currentIndex);
+    }
+  }
+  heapifyDown() {
+    let currentIndex = 0;
+    while (this.getLeftChildIndex(currentIndex) < this.data.length) {
+      let largestChildIndex = this.getLeftChildIndex(currentIndex);
+
+      if (
+        this.getRightChildIndex(currentIndex) < this.data.length && // Corrected method call
+        this.data[this.getRightChildIndex(currentIndex)] >
+          this.data[largestChildIndex]
+      ) {
+        largestChildIndex = this.getRightChildIndex(currentIndex);
       }
-      curr = curr.children[insertData];
-    }
-    curr.isWordEnd = true;
-  }
-  contains(word) {
-    let curr = this.root;
-    for (let i = 0; i < word.length; i++) {
-      let insertData = word[i];
-      if (!(insertData in curr.children)) {
-        return false;
+      if (this.data[currentIndex] < this.data[largestChildIndex]) {
+        this.swap(currentIndex, largestChildIndex);
+        currentIndex = largestChildIndex;
+      } else {
+        return;
       }
-      curr = curr.children[insertData];
-    }
-    return curr.isWordEnd;
-  }
-  searchPrefix(word) {
-    let curr = this.root;
-    let words = [];
-    for (let i = 0; i < word.length; i++) {
-      let searchData = word[i];
-      if (!(searchData in curr.children)) {
-        return word;
-      }
-      curr = curr.children[searchData];
-    }
-    this.collection(curr, word, words);
-    return words;
-  }
-  collection(curr, word, words) {
-    if (curr.isWordEnd) {
-      words.push(word);
-    }
-    for (let child in curr.children) {
-      this.collection(curr.children[child], word + child, words);
-    }
-  }
-  delete(word) {
-    this.deleteWord(this.root, word, 0);
-  }
-  deleteWord(root, word, index) {
-    if (!root) return false;
-    if (index === word.length) {
-      return false;
-    }
-    if (index === word.length) {
-      if (!root.isWordEnd) {
-        return false;
-      }
-      root.isWordEnd = false;
-      return Object.keys(root.children).length === 0;
-    }
-    let char = word[index];
-    if (this.deleteWord(root.children[char], word, index + 1)) {
-      delete root.children[char];
-      return Object.keys(root.children).length === 0;
     }
   }
 }
-function heapSort(arr){
-  var sorted = [];
-  var heap1 = new Node();
-  
-  for(let i=0; i<arr.length; i++){
-      heap1.insert(arr[i]);
+
+const maxHeapInstance = new maxHeap();
+
+//  maxHeapInstance.push(1);
+//  maxHeapInstance.push(12);
+//  maxHeapInstance.poll();
+//  console.log(maxHeapInstance.data.join(','));
+
+function heapSort(arr) {
+  const heap = new maxHeap();
+  for (let i = 0; i < arr.length; i++) {
+    heap.push(arr[i]); // Use push instead of insert
   }
-  
-  for(let i=0; i<arr.length; i++){
-      sorted.push(heap1.delete());
+  const sorted = [];
+  while (heap.data.length > 0) {
+    // Use heap.data.length to check if the heap is empty
+    sorted.push(heap.poll()); // Use poll to remove and return the maximum element
   }
   return sorted;
 }
 
 let arr = [1, 6, 2, 3, 7, 3, 4, 6, 9];
 arr = heapSort(arr);
-
 console.log(arr);

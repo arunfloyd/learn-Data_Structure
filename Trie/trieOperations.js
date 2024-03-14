@@ -1,8 +1,4 @@
-// //Node
-// //Trie
-// //Insert
-// //Contain
-// //startswithprefix
+// //Node // //Trie // //Insert // //Contain // //startswithprefix
 
 class Node {
   constructor() {
@@ -10,7 +6,6 @@ class Node {
     this.isWordEnd = false;
   }
 }
-
 class Trie {
   constructor() {
     this.root = new Node();
@@ -99,12 +94,10 @@ class Trie {
 let tries = new Trie();
 
 tries.insert("apple");
-tries.insert('appledata');
-tries.insert('applemon');
+tries.insert("appledata");
+tries.insert("applemon");
 // tries.delete('apple')
-console.log(tries.searchPrefix('apple'));
-
-
+console.log(tries.searchPrefix("apple"));
 
 // class Node {
 //   constructor() {
@@ -163,7 +156,7 @@ console.log(tries.searchPrefix('apple'));
 //       } else {
 //         for (let char in node.children) {
 //           if (removeHelper(node.children[char], index + 1)) {
-//             delete node.children[char]; 
+//             delete node.children[char];
 //           }
 //         }
 //         if (Object.keys(node.children).length === 0 && !node.isWordEnd) {
