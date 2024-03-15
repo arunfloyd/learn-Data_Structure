@@ -1588,7 +1588,9 @@ console.log(sparseArray[999]); // Output: 'last'
                       which guarantees that operations like search, insert, and delete can be performed in O(log n) time.
 
        -> Flexibility: Different types of self-balancing trees can be chosen based on the specific requirements of the application,
-                       such as the need for efficient insertions and deletions or the need for efficient searches.                 
+                       such as the need for efficient insertions and deletions or the need for efficient searches.   
+
+
 .................................Binary Search Trees (BST).........................
 
 >> Insertion: The average and worst-case time complexity for insertion in a BST is O(log n) for a balanced tree 
@@ -1646,7 +1648,7 @@ console.log(sparseArray[999]); // Output: 'last'
 
     >> Memory Management: In operating systems, heaps are used for dynamic memory allocation.
                           The heap is a region of a computer's memory space that is used for dynamic memory allocation.
-                         The heap is managed by the programmer, and it grows and shrinks as needed.
+                          The heap is managed by the programmer, and it grows and shrinks as needed.
 
 >>> Time Complexity for Heap Operations
     
@@ -1695,7 +1697,8 @@ console.log(sparseArray[999]); // Output: 'last'
   
    >>> Directed Graphs (Digraphs): In a directed graph, edges have a direction, meaning that the relationship between two nodes
                                    is not symmetric.
-                                   For example, a directed graph can represent a one-way road network where each road has a direction.
+                                   For example, a directed graph can represent a one-way road network where each road
+                                   has a direction.
    
    >>> Undirected Graphs: In an undirected graph, edges do not have a direction,
                           meaning that the relationship between two nodes is symmetric.

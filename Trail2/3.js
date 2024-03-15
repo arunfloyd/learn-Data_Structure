@@ -1,42 +1,68 @@
-class Node {
+class Graph {
   constructor() {
-    this.children = {};
-    this.isWordEnd = false;
+    this.adjList = {};
   }
-}
-class Trie {
-  constructor() {
-    this.root = null;
-  }
-  insert(word){
-    let curr = this.root
-    for (let i=0;i<word.length;i++){
-        let insertData = word[i]
-        if(!(insertData in children)){
-            curr.children[insertData] = new Node()
-        }
-        curr = curr.children[insertData]
+  addVertex(vertex) {
+    if (!this.adjList[vertex]) {
+      this.adjList[vertex] = new Set();
     }
-    curr.isWordEnd = true
   }
-  delete(word){
-    this.deleteWord(this.root,word,0)
+  addEdge(vertex1, vertex2) {
+    if (!this.adjList[vertex1]) {
+      this.addVertex(vertex1);
+    }
+    if (!this.adjList[vertex2]) {
+      this.addVertex(vertex2);
+    }
+    this.adjList[vertex1].add(vertex2);
+    this.adjList[vertex2].add(vertex2);
   }
-  deleteWord(root,word,index){
-    if(!root){
-        return
-    }
-    if(index === word.length){
-        if(!root.isWordEnd){
-            return 
-        }
-        root.isWordEnd = false
-        return Object.keys(root.children).length ===0
-    }
-    let char = word[index]
+  removeEdge(vertex1, vertex2) {
+    this.adjList[vertex1].delete(vertex2);
+    this.adjList[vertex2].delete(vertex1);
+  }
 
-    if(this.deleteWord(root.children[char],word,index+1)){
-        delete root.children[char]
+  removeVertex(vertex) {
+    if (!this.adjList[vertex]) {
+      return;
+    }
+    for (let adj of this.adjList[vertex]) {
+      this.removeEdge(vertex, adj);
+    }
+    delete this.adjList[vertex];
+  }
+  hasEdge(vertex1, vertex2) {
+    return (
+      this.adjList[vertex1].has(vertex2) && this.adjList[vertex2].has(vertex1)
+    );
+  }
+  display() {
+    for (let vertex in this.adjList) {
+      console.log(vertex + "-> " + [...this.adjList[vertex]]);
+    }
+  }
+  bfs(start) {
+    const visited = new Set();
+    const queue = [start];
+
+    while (queue.length > 0) {
+      const currentVertex = queue.shift();
+      if (!visited.has(currentVertex)) {
+        visited.add(currentVertex);
+        console.log(currentVertex);
+
+        for (let neighbor of this.adjList[currentVertex]) {
+          if (!visited.has(neighbor)) {
+            queue.push(neighbor);
+          }
+        }
+      }
+    }
+  }
+  dfs(start){
+    const visited = new Set()
+    const dfsTraversal = (vertex) =>{
+      if(!visited.has(vertex))
     }
   }
 }

@@ -62,28 +62,31 @@ class maxHeap {
       }
     }
   }
+   heapSort(arr) {
+    const heap = new maxHeap();
+    for (let i = 0; i < arr.length; i++) {
+      heap.push(arr[i]); // Use push instead of insert
+    }
+    const sorted = [];
+    while (heap.data.length > 0) {
+      // Use heap.data.length to check if the heap is empty
+      sorted.push(heap.poll()); // Use poll to remove and return the maximum element
+    }
+    return sorted;
+  }
 }
 
 const maxHeapInstance = new maxHeap();
 
-//  maxHeapInstance.push(1);
-//  maxHeapInstance.push(12);
-//  maxHeapInstance.poll();
-//  console.log(maxHeapInstance.data.join(','));
+ maxHeapInstance.push(1);
+ maxHeapInstance.push(11);
 
-function heapSort(arr) {
-  const heap = new maxHeap();
-  for (let i = 0; i < arr.length; i++) {
-    heap.push(arr[i]); // Use push instead of insert
-  }
-  const sorted = [];
-  while (heap.data.length > 0) {
-    // Use heap.data.length to check if the heap is empty
-    sorted.push(heap.poll()); // Use poll to remove and return the maximum element
-  }
-  return sorted;
-}
+ maxHeapInstance.push(12);
+ maxHeapInstance.poll();
+ console.log(maxHeapInstance.data.join(','));
+
+
 
 let arr = [1, 6, 2, 3, 7, 3, 4, 6, 9];
-arr = heapSort(arr);
+arr = maxHeapInstance.heapSort(arr);
 console.log(arr);

@@ -103,3 +103,19 @@ a.push(minHeap.poll());
 a.push(minHeap.poll());
 
 console.log("top 5 items", a);
+function heapSort(arr) {
+  const heap = new minHeap();
+  for (let i = 0; i < arr.length; i++) {
+    heap.push(arr[i]); // Use push instead of insert
+  }
+  const sorted = [];
+  while (heap.data.length > 0) {
+    // Use heap.data.length to check if the heap is empty
+    sorted.push(heap.poll()); // Use poll to remove and return the maximum element
+  }
+  return sorted;
+}
+
+let arr = [1, 6, 2, 3, 7, 3, 4, 6, 9];
+arr = heapSort(arr);
+console.log(arr);
