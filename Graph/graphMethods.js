@@ -74,6 +74,35 @@ class Graph {
 
     dfsTraversal(startVertex);
   }
+  bfsShortestPath(startVertex, endVertex) {
+    const visited = new Set();
+    const queue = [[startVertex]];
+    const paths = new Map();
+   
+    while (queue.length > 0) {
+       const currentPath = queue.shift();
+       const currentVertex = currentPath[currentPath.length - 1];
+   
+       if (currentVertex === endVertex) {
+         return currentPath; // Return the path to the end vertex
+       }
+   
+       if (!visited.has(currentVertex)) {
+         visited.add(currentVertex);
+   
+         for (let neighbor of this.adjacencyList[currentVertex]) {
+           if (!visited.has(neighbor)) {
+             const newPath = [...currentPath, neighbor];
+             queue.push(newPath);
+             paths.set(neighbor, newPath); // Store the path leading to this neighbor
+           }
+         }
+       }
+    }
+   
+    return null; // Return null if no path is found
+   }
+   
 }
 
 const graph = new Graph();
