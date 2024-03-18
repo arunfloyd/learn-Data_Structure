@@ -1547,8 +1547,10 @@ console.log(sparseArray[999]); // Output: 'last'
 
 ..................................Self-Balancing Tree ....................................
 
- -> A self-balancing binary search tree (BST) is a binary search tree that automatically keeps its height (or depth) small
-   in the face of arbitrary item insertions and deletions. 
+ -> A self-balancing binary search tree (BST) is a type of binary tree that automatically maintains a low height, 
+    ensuring that operations like insertion, deletion, and search take O(log n) time in both the average and worst cases.
+ 
+ -> Self-balancing trees are crucial for keeping the tree height small, which is essential for efficient operations on the tree.
  
  -> This is achieved by rebalancing the tree after insertions and deletions to ensure that the tree remains approximately balanced,
     with the height of the tree being logarithmic in the number of nodes.
@@ -1573,9 +1575,9 @@ console.log(sparseArray[999]); // Output: 'last'
                         This property, along with the coloring rules, ensures that the tree remains approximately balanced.
     
     -> B-Trees: B-Trees are a generalization of binary search trees that are used in databases and file systems.
-               They are self-balancing and allow for efficient insertion, deletion, and search operations.
-               B-Trees maintain their balance by ensuring that all leaves are at the same depth and that the tree is filled 
-               to a certain extent before splitting.
+                They are self-balancing and allow for efficient insertion, deletion, and search operations.
+                B-Trees maintain their balance by ensuring that all leaves are at the same depth and that the tree is filled 
+                to a certain extent before splitting.
    
     -> Splay Trees: Splay Trees are a type of self-balancing binary search tree that move a node to the root of the tree 
                     after each access.
@@ -1685,13 +1687,200 @@ console.log(sparseArray[999]); // Output: 'last'
         > Finding the Minimum : O(1)
 
 
+.............................. Trie ........................    
+
+  -> A trie, also known as a prefix tree, is a tree-like data structure that is used to store a dynamic set
+     or associative array where the keys are usually strings.
+  
+  -> Tries are particularly efficient for certain types of operations, such as searching for strings with a common prefix,
+     which can be very fast.
+
+  >>>> Types of Tries 
+   
+       >> Standard Tries: In a standard trie, each node represents a character of a string.
+                          The root node is empty, and each path from the root to a leaf node represents a string in the trie.
+                          Standard tries are simple to implement but can become large and inefficient for certain datasets.
+
+       >> Compressed Tries: Compressed tries are a variant of standard tries where nodes with a single child are merged 
+                            into a single node.
+                            This reduces the size of the trie and can make it more efficient for certain operations.
+
+  >>>> Applications of Tries
+
+    >> Autocomplete: Tries are widely used in autocomplete systems to quickly find all strings that start with a given prefix.
+                     This is particularly useful in applications like search engines, text editors, and IDEs.
+    
+    >> Spell Check: Tries can be used to implement spell checkers by storing all valid words in a trie.
+                    When a user types a word, the spell checker can quickly check if the word exists in the trie.
+  
+    >> IP Routing: In computer networks, tries can be used to implement IP routing tables.
+                   Each node in the trie represents a bit in the IP address, allowing for efficient routing of packets.
+
+    >> Telephone Directory: Tries can be used to store a telephone directory, where each node represents a digit in a phone number.
+                 This allows for efficient searching and insertion of phone numbers.
+    
+    >> Text Compression: Tries can be used in text compression algorithms to store the frequency of characters in a text. 
+                         This can be used to compress text by replacing common strings with shorter representations.
+                           
+
+
+ ............................. Trie Vs Hashtable ........................................                          
+
+ >>>> Trie
+  
+  >> Purpose: Tries are primarily used for storing strings and are particularly efficient for operations that involve 
+              finding strings with a common prefix.
+  
+  >> Structure: Tries are tree-like structures where each node represents a character of a string.
+                The root node is empty, and each path from the root to a leaf node represents a string in the trie.
+
+  >> Search Complexity: The time complexity for searching a string in a trie is O(m), where m is the length of the string.
+                        This is because each character in the string corresponds to a level in the trie.
+
+  >> Insertion Complexity: The time complexity for inserting a string into a trie is also O(m),
+                           as each character in the string corresponds to a level in the trie.
+  
+  >> Space Complexity: The space complexity of a trie is O(alphabet_size * key_length * N),
+                       where N is the number of keys in the trie.
+                       This can be quite space-efficient for certain datasets, especially when the keys have a common prefix.
+  
+  >> Use Cases: Tries are commonly used in applications like autocomplete systems, spell checkers, and IP routing tables.
+
+ >>>> Hash Table
+   
+   >> Purpose: Hash tables are used for storing key-value pairs and are efficient for operations that involve looking up 
+                values by their keys.
+   
+   >> Structure: Hash tables use a hash function to map keys to indices in an array.
+                 Collisions are resolved using techniques like chaining or open addressing.
+   
+   >> Search Complexity: The average time complexity for searching a key in a hash table is O(1),
+                         assuming a good hash function and proper handling of collisions.
+                         However, in the worst case (when all keys hash to the same index),
+                         the complexity can degrade to O(n), where n is the number of keys in the hash table.
+
+   >> Insertion Complexity: The average time complexity for inserting a key-value pair into a hash table is O(1),
+                            assuming a good hash function and proper handling of collisions.
+                            However, in the worst case, the complexity can degrade to O(n).
+  
+   >> Space Complexity: The space complexity of a hash table is O(n),
+                        where n is the number of key-value pairs stored in the hash table.
+   
+   >> Use Cases: Hash tables are widely used in various applications, including database indexing, 
+                 caching, and implementing sets and maps.
+
+ >>>> Comparison
+  
+   >> Use Case: Tries are more suitable for operations involving strings and prefixes,
+                while hash tables are more general-purpose for storing key-value pairs.
+   
+   >> Complexity: Tries have a predictable time complexity for operations involving strings,
+                  while hash tables have an average time complexity of O(1) but can degrade to O(n) in the worst case.
+
+   >> Space Efficiency: Tries can be more space-efficient for certain datasets, especially when the keys have a common prefix.
+                        Hash tables have a more predictable space complexity.
+
+   >> Implementation Complexity: Tries can be more complex to implement correctly, especially when dealing with collisions and 
+                                 ensuring the trie remains balanced.
+                                 Hash tables are generally simpler to implement.                
+
+
+
+..................................Heapification..........................................
+
+-> Heapification is a process used in heap data structures, such as binary heaps, to ensure that the heap property is maintained.
+
+   The heap property for a binary heap is that for any given node i, the value of i is not smaller than the values of its children. 
+   There are two main approaches to heapification: top-down and bottom-up.
+
+ >>>> Top-Down Heapification
+    
+   -> Top-down heapification is the process of maintaining the heap property from the root down to the leaves.
+      This approach is typically used in operations that involve removing the root element (e.g., in a priority queue),
+      which can potentially disrupt the heap property.
+
+   >>> Steps for Top-Down Heapification:
+
+     -> Remove the root: The root element is removed from the heap.
+     -> Heapify the root: The last element in the heap is moved to the root position.
+     -> Sift down: The new root element is sifted down to its correct position to restore the heap property.
+                   This involves comparing the root with its children and swapping it with the larger child if necessary.
+                   This process is repeated until the root is in its correct position or there are no more children to compare it with.
+     -> Time Complexity: The time complexity of top-down heapification is O(log n), where n is the number of elements in the heap.
+                         This is because, in the worst case, the root element may need to be sifted down through the entire height 
+                         of the heap.
+
+  >>>> Bottom-Up Heapification
+
+     -> Bottom-up heapification is the process of maintaining the heap property from the leaves up to the root.
+     
+     -> This approach is typically used in operations that involve inserting a new element into the heap, which can potentially 
+        disrupt the heap property.
+
+    >>> Steps for Bottom-Up Heapification:
+
+       -> Insert the new element: The new element is inserted at the end of the heap.
+       -> Sift up: The new element is sifted up to its correct position to restore the heap property.
+                   This involves comparing the new element with its parent and swapping it with the parent if necessary.
+                   This process is repeated until the new element is in its correct position or it becomes the root.
+
+       -> Time Complexity: The time complexity of bottom-up heapification is O(log n), 
+                           where n is the number of elements in the heap.
+                           This is because, in the worst case, the new element may need to be sifted up through the entire
+                            height of the heap.                       
+
+   >>>>>> Comparison
+
+      -> Top-Down Heapification is used when the root element is removed, which can disrupt the heap property.
+          -> It involves sifting down the new root to its correct position.
+      
+      -> Bottom-Up Heapification is used when a new element is inserted, which can disrupt the heap property.
+         It involves sifting up the new element to its correct position.                         
+
+
+
+...........................How To Check BST is a Subset of X ...........................
+
+-> To check if a binary search tree (BST) is a subset of another BST (let's call it BST X),
+   you can perform an in-order traversal of both trees and compare the elements.
+
+-> The idea is to ensure that every element in the first BST (let's call it BST Y) is also present in BST X. 
+
+ >>> Here's a step-by-step approach to achieve this:
+
+   >> Step 1: In-Order Traversal of BST Y
+              Perform an in-order traversal of BST Y. This traversal visits the nodes in ascending order.
+
+   >> Step 2: In-Order Traversal of BST X
+              Perform an in-order traversal of BST X. This traversal visits the nodes in ascending order.
+
+   >> Step 3: Compare the Elements
+              While traversing both trees, compare the elements of BST Y with those of BST X.
+              If an element from BST Y is not found in BST X, then BST Y is not a subset of BST X.
+
+   >> Step 4: Check for BST Y's Completeness
+              After the traversal, if all elements of BST Y are found in BST X, and BST Y has fewer elements than BST X,
+              then BST Y is a subset of BST X.
+-> Time Complexity
+   
+   The time complexity of this approach is O(n + m), 
+   where n is the number of nodes in BST Y and m is the number of nodes in BST X.
+   This is because each tree is traversed once.
+
+-> Space Complexity
+   
+   The space complexity is O(n + m), as we need to store the elements of both trees in lists for comparison. 
+
+
 ......................................Graph...................................
 
--> Graphs are a fundamental data structure in computer science, used to model pairwise relations between objects.
+-> A graph is a non-linear data structure consisting of a set of vertices (nodes) and edges that connect these vertices.
 
--> They are versatile and can be used in a wide range of applications.
+-> It can be directed or undirected, and the edges can have weights or be unweighted.
 
--> Graphs can be categorized into two main types: directed and undirected.
+-> Graphs can have cycles, meaning there can be a path that starts and ends at the same vertex.
+
+-> They are used to model various real-world scenarios such as social networks, road networks, and computer networks.
 
 >>>> Types of Graphs
   
@@ -1903,103 +2092,7 @@ console.log(sparseArray[999]); // Output: 'last'
                            and each column represents an edge.
                            The cell at the intersection of row i and column j indicates whether vertex i is incident to edge j. This is useful for sparse graphs and when the graph is undirected. Edge indexing in this context involves accessing the matrix by the edge's row and column indices.
 
-  .............................. Trie ........................    
-
-  -> A trie, also known as a prefix tree, is a tree-like data structure that is used to store a dynamic set
-     or associative array where the keys are usually strings.
   
-  -> Tries are particularly efficient for certain types of operations, such as searching for strings with a common prefix,
-     which can be very fast.
-
-  >>>> Types of Tries 
-   
-       >> Standard Tries: In a standard trie, each node represents a character of a string.
-                          The root node is empty, and each path from the root to a leaf node represents a string in the trie.
-                          Standard tries are simple to implement but can become large and inefficient for certain datasets.
-
-       >> Compressed Tries: Compressed tries are a variant of standard tries where nodes with a single child are merged 
-                            into a single node.
-                            This reduces the size of the trie and can make it more efficient for certain operations.
-
-  >>>> Applications of Tries
-
-    >> Autocomplete: Tries are widely used in autocomplete systems to quickly find all strings that start with a given prefix.
-                     This is particularly useful in applications like search engines, text editors, and IDEs.
-    
-    >> Spell Check: Tries can be used to implement spell checkers by storing all valid words in a trie.
-                    When a user types a word, the spell checker can quickly check if the word exists in the trie.
-  
-    >> IP Routing: In computer networks, tries can be used to implement IP routing tables.
-                   Each node in the trie represents a bit in the IP address, allowing for efficient routing of packets.
-
-    >> Telephone Directory: Tries can be used to store a telephone directory, where each node represents a digit in a phone number.
-                 This allows for efficient searching and insertion of phone numbers.
-    
-    >> Text Compression: Tries can be used in text compression algorithms to store the frequency of characters in a text. 
-                         This can be used to compress text by replacing common strings with shorter representations.
-                           
-
-
- ............................. Trie Vs Hashtable ........................................                          
-
- >>>> Trie
-  
-  >> Purpose: Tries are primarily used for storing strings and are particularly efficient for operations that involve 
-              finding strings with a common prefix.
-  
-  >> Structure: Tries are tree-like structures where each node represents a character of a string.
-                The root node is empty, and each path from the root to a leaf node represents a string in the trie.
-
-  >> Search Complexity: The time complexity for searching a string in a trie is O(m), where m is the length of the string.
-                        This is because each character in the string corresponds to a level in the trie.
-
-  >> Insertion Complexity: The time complexity for inserting a string into a trie is also O(m),
-                           as each character in the string corresponds to a level in the trie.
-  
-  >> Space Complexity: The space complexity of a trie is O(alphabet_size * key_length * N),
-                       where N is the number of keys in the trie.
-                       This can be quite space-efficient for certain datasets, especially when the keys have a common prefix.
-  
-  >> Use Cases: Tries are commonly used in applications like autocomplete systems, spell checkers, and IP routing tables.
-
- >>>> Hash Table
-   
-   >> Purpose: Hash tables are used for storing key-value pairs and are efficient for operations that involve looking up 
-                values by their keys.
-   
-   >> Structure: Hash tables use a hash function to map keys to indices in an array.
-                 Collisions are resolved using techniques like chaining or open addressing.
-   
-   >> Search Complexity: The average time complexity for searching a key in a hash table is O(1),
-                         assuming a good hash function and proper handling of collisions.
-                         However, in the worst case (when all keys hash to the same index),
-                         the complexity can degrade to O(n), where n is the number of keys in the hash table.
-
-   >> Insertion Complexity: The average time complexity for inserting a key-value pair into a hash table is O(1),
-                            assuming a good hash function and proper handling of collisions.
-                            However, in the worst case, the complexity can degrade to O(n).
-  
-   >> Space Complexity: The space complexity of a hash table is O(n),
-                        where n is the number of key-value pairs stored in the hash table.
-   
-   >> Use Cases: Hash tables are widely used in various applications, including database indexing, 
-                 caching, and implementing sets and maps.
-
- >>>> Comparison
-  
-   >> Use Case: Tries are more suitable for operations involving strings and prefixes,
-                while hash tables are more general-purpose for storing key-value pairs.
-   
-   >> Complexity: Tries have a predictable time complexity for operations involving strings,
-                  while hash tables have an average time complexity of O(1) but can degrade to O(n) in the worst case.
-
-   >> Space Efficiency: Tries can be more space-efficient for certain datasets, especially when the keys have a common prefix.
-                        Hash tables have a more predictable space complexity.
-
-   >> Implementation Complexity: Tries can be more complex to implement correctly, especially when dealing with collisions and 
-                                 ensuring the trie remains balanced.
-                                 Hash tables are generally simpler to implement.                
-
 
 ....................Height of a Node ,Depth of a Node and Degree of a Node .........................
 
@@ -2082,92 +2175,6 @@ console.log(sparseArray[999]); // Output: 'last'
 
 
 
-..................................Heapification..........................................
-
--> Heapification is a process used in heap data structures, such as binary heaps, to ensure that the heap property is maintained.
-
-   The heap property for a binary heap is that for any given node i, the value of i is not smaller than the values of its children. 
-   There are two main approaches to heapification: top-down and bottom-up.
-
- >>>> Top-Down Heapification
-    
-   -> Top-down heapification is the process of maintaining the heap property from the root down to the leaves.
-      This approach is typically used in operations that involve removing the root element (e.g., in a priority queue),
-      which can potentially disrupt the heap property.
-
-   >>> Steps for Top-Down Heapification:
-
-     -> Remove the root: The root element is removed from the heap.
-     -> Heapify the root: The last element in the heap is moved to the root position.
-     -> Sift down: The new root element is sifted down to its correct position to restore the heap property.
-                   This involves comparing the root with its children and swapping it with the larger child if necessary.
-                   This process is repeated until the root is in its correct position or there are no more children to compare it with.
-     -> Time Complexity: The time complexity of top-down heapification is O(log n), where n is the number of elements in the heap.
-                         This is because, in the worst case, the root element may need to be sifted down through the entire height 
-                         of the heap.
-
-  >>>> Bottom-Up Heapification
-
-     -> Bottom-up heapification is the process of maintaining the heap property from the leaves up to the root.
-     
-     -> This approach is typically used in operations that involve inserting a new element into the heap, which can potentially 
-        disrupt the heap property.
-
-    >>> Steps for Bottom-Up Heapification:
-
-       -> Insert the new element: The new element is inserted at the end of the heap.
-       -> Sift up: The new element is sifted up to its correct position to restore the heap property.
-                   This involves comparing the new element with its parent and swapping it with the parent if necessary.
-                   This process is repeated until the new element is in its correct position or it becomes the root.
-
-       -> Time Complexity: The time complexity of bottom-up heapification is O(log n), 
-                           where n is the number of elements in the heap.
-                           This is because, in the worst case, the new element may need to be sifted up through the entire
-                            height of the heap.                       
-
-   >>>>>> Comparison
-
-      -> Top-Down Heapification is used when the root element is removed, which can disrupt the heap property.
-          -> It involves sifting down the new root to its correct position.
-      
-      -> Bottom-Up Heapification is used when a new element is inserted, which can disrupt the heap property.
-         It involves sifting up the new element to its correct position.                         
-
-
-
-...........................How To Check BST is a Subset of X ...........................
-
--> To check if a binary search tree (BST) is a subset of another BST (let's call it BST X),
-   you can perform an in-order traversal of both trees and compare the elements.
-
--> The idea is to ensure that every element in the first BST (let's call it BST Y) is also present in BST X. 
-
- >>> Here's a step-by-step approach to achieve this:
-
-   >> Step 1: In-Order Traversal of BST Y
-              Perform an in-order traversal of BST Y. This traversal visits the nodes in ascending order.
-
-   >> Step 2: In-Order Traversal of BST X
-              Perform an in-order traversal of BST X. This traversal visits the nodes in ascending order.
-
-   >> Step 3: Compare the Elements
-              While traversing both trees, compare the elements of BST Y with those of BST X.
-              If an element from BST Y is not found in BST X, then BST Y is not a subset of BST X.
-
-   >> Step 4: Check for BST Y's Completeness
-              After the traversal, if all elements of BST Y are found in BST X, and BST Y has fewer elements than BST X,
-              then BST Y is a subset of BST X.
--> Time Complexity
-   
-   The time complexity of this approach is O(n + m), 
-   where n is the number of nodes in BST Y and m is the number of nodes in BST X.
-   This is because each tree is traversed once.
-
--> Space Complexity
-   
-   The space complexity is O(n + m), as we need to store the elements of both trees in lists for comparison. 
-
-
 .........................Adjacency Lists And Adjacency Matrices........................
 
  >>> Adjacency List 
@@ -2211,3 +2218,6 @@ console.log(sparseArray[999]); // Output: 'last'
                              regardless of the actual number of edges.
       -> Slow Operations: Adding an edge or removing an edge can be slow because it involves updating multiple elements 
                           in the matrix.                     
+
+
+
