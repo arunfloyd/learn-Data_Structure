@@ -35,7 +35,10 @@ class BinarySearchTree {
       }
     }
   }
-  search(root, value) {
+  search(value) {
+    return this.searchNode(this.root, value);
+  }
+  searchNode(root, value) {
     if (!root) {
       return false;
     } else {

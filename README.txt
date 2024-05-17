@@ -1508,6 +1508,7 @@ console.log(sparseArray[999]); // Output: 'last'
               2   3
              / \   
             4   5 
+            
    -> This tree is complete because every level is fully populated except for the last level, which is filled from left to right.
 
 
