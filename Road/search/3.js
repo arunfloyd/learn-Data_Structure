@@ -16,7 +16,6 @@ function findKthPositive(arr, k) {
         count++;
       }
     }
-  
     return k + count;
   }
   

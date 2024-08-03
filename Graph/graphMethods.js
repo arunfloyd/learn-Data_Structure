@@ -52,7 +52,7 @@ class Graph {
         console.log(currentVertex);
 
         for (let neighbor of this.adjacencyList[currentVertex]) {
-          if (!visited.has(neighbor)) {   
+          if (!visited.has(neighbor)) {
             queue.push(neighbor);
           }
         }
@@ -78,36 +78,35 @@ class Graph {
     const visited = new Set();
     const queue = [[startVertex]];
     const paths = new Map();
-   
+
     while (queue.length > 0) {
-       const currentPath = queue.shift();
-       const currentVertex = currentPath[currentPath.length - 1];
-   
-       if (currentVertex === endVertex) {
-         return currentPath; // Return the path to the end vertex
-       }
-   
-       if (!visited.has(currentVertex)) {
-         visited.add(currentVertex);
-   
-         for (let neighbor of this.adjacencyList[currentVertex]) {
-           if (!visited.has(neighbor)) {
-             const newPath = [...currentPath, neighbor];
-             queue.push(newPath);
-             paths.set(neighbor, newPath); // Store the path leading to this neighbor
-           }
-         }
-       }
+      const currentPath = queue.shift();
+      const currentVertex = currentPath[currentPath.length - 1];
+
+      if (currentVertex === endVertex) {
+        return currentPath; // Return the path to the end vertex
+      }
+
+      if (!visited.has(currentVertex)) {
+        visited.add(currentVertex);
+
+        for (let neighbor of this.adjacencyList[currentVertex]) {
+          if (!visited.has(neighbor)) {
+            const newPath = [...currentPath, neighbor];
+            queue.push(newPath);
+            paths.set(neighbor, newPath); // Store the path leading to this neighbor
+          }
+        }
+      }
     }
-   
+
     return null; // Return null if no path is found
-   }
-   
+  }
 }
 
 const graph = new Graph();
 graph.addVertex("A");
-graph.addVertex("B"); 
+graph.addVertex("B");
 graph.addVertex("C");
 
 graph.addEdge("A", "B");
@@ -123,3 +122,4 @@ console.log(graph.dfs("e"));
 //Constant Time Complexity O(1)
 
 //But on the removal of vetex takes the number of adjacent vertixes
+

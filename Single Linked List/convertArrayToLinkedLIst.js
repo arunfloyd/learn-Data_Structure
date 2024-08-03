@@ -2,41 +2,26 @@ class Node {
   constructor(value) {
     this.value = value;
     this.next = null;
+    this.prev = null;
   }
 }
-class LinkedList {
+class DoubleLinkedList {
   constructor() {
     this.head = null;
+    this.tail = null;
   }
-  append(value) {
+  prepend(value) {
     const node = new Node(value);
-    if (!this.head) {
-      this.head = node;
-      return;
+    node.next = this.head;
+    if (this.head) {
+      node.next.prev = node;
+    } else {
+      this.tail = node;
     }
-    let curr = this.head;
-    while (curr.next) {
-      curr = curr.next;
-    }
-    curr.next = node;
+    this.head = node;
   }
-  print() {
-    if (!this.head) {
-      return;
-    }
-    let curr = this.head;
-    let arr = "";
-    while (curr) {
-      arr += `${curr.value} `;
-      curr = curr.next;
-    }
-    console.log(arr);
+  removePrepend() {
+    this.head = this.head.next;
+    this.head.prev = null;
   }
 }
-
-const list = new LinkedList();
-const array = [1, 2, 3, 4, 5, 6];
-for (const val of array) {
-  list.append(val);
-}
-list.print(); //Output : 1 2 3 4 5 6  

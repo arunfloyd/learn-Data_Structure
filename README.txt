@@ -1,4 +1,4 @@
-.............................DATA STRUCTURE..........................
+ .............................DATA STRUCTURE..........................
 
 Data structures are ways of organizing and storing data so that they can be accessed and modified efficiently.
 
@@ -1080,7 +1080,7 @@ console.log(sparseArray[999]); // Output: 'last'
 
 >>>>> Consequences:
 
- >>> The program may terminate with an error message indicating a stack overflow.
+ >>> The program may terminate wtith an error message indicating a stack overflow.
 
  >>> In some cases, the program might continue to run but with unexpected behavior,
      as it tries to access memory that it shouldn't.

@@ -52,7 +52,7 @@ class Trie {
     }
 
     this.collection(curr, word, words);
-    return words;
+    return words;       
   }
 
   collection(curr, word, words) {
@@ -72,7 +72,7 @@ class Trie {
     if (!root) {
       return false;
     }
-    if (index === word.length) {
+    if (index === word.length) {  
       if (!root.isWordEnd) {
         return false;
       }

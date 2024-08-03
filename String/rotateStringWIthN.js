@@ -18,6 +18,7 @@ function rotate(string, n) {
 }
 
 console.log(rotate("APPLE", 2)); // Output: "PLEAP"
+ 
 
 // Method 2
 

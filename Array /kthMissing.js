@@ -9,4 +9,4 @@ function findKthMissing(array,k){
     return k+count
 }
 
-console.log(findKthMissing([1,2,3,5,6,7],3)) //Output :  9
+console.log(findKthMissing([1,2,3,5,6,7],3)) //Output :  9 
