@@ -1688,6 +1688,57 @@ console.log(sparseArray[999]); // Output: 'last'
         > Finding the Minimum : O(1)
 
 
+..................................Heapification..........................................
+
+-> Heapification is a process used in heap data structures, such as binary heaps, to ensure that the heap property is maintained.
+
+   The heap property for a binary heap is that for any given node i, the value of i is not smaller than the values of its children. 
+   There are two main approaches to heapification: top-down and bottom-up.
+
+ >>>> Top-Down Heapification
+    
+   -> Top-down heapification is the process of maintaining the heap property from the root down to the leaves.
+      This approach is typically used in operations that involve removing the root element (e.g., in a priority queue),
+      which can potentially disrupt the heap property.
+
+   >>> Steps for Top-Down Heapification:
+
+     -> Remove the root: The root element is removed from the heap.
+     -> Heapify the root: The last element in the heap is moved to the root position.
+     -> Sift down: The new root element is sifted down to its correct position to restore the heap property.
+                   This involves comparing the root with its children and swapping it with the larger child if necessary.
+                   This process is repeated until the root is in its correct position or there are no more children to compare it with.
+     -> Time Complexity: The time complexity of top-down heapification is O(log n), where n is the number of elements in the heap.
+                         This is because, in the worst case, the root element may need to be sifted down through the entire height 
+                         of the heap.
+
+  >>>> Bottom-Up Heapification
+
+     -> Bottom-up heapification is the process of maintaining the heap property from the leaves up to the root.
+     
+     -> This approach is typically used in operations that involve inserting a new element into the heap, which can potentially 
+        disrupt the heap property.
+
+    >>> Steps for Bottom-Up Heapification:
+
+       -> Insert the new element: The new element is inserted at the end of the heap.
+       -> Sift up: The new element is sifted up to its correct position to restore the heap property.
+                   This involves comparing the new element with its parent and swapping it with the parent if necessary.
+                   This process is repeated until the new element is in its correct position or it becomes the root.
+
+       -> Time Complexity: The time complexity of bottom-up heapification is O(log n), 
+                           where n is the number of elements in the heap.
+                           This is because, in the worst case, the new element may need to be sifted up through the entire
+                            height of the heap.                       
+
+   >>>>>> Comparison
+
+      -> Top-Down Heapification is used when the root element is removed, which can disrupt the heap property.
+          -> It involves sifting down the new root to its correct position.
+      
+      -> Bottom-Up Heapification is used when a new element is inserted, which can disrupt the heap property.
+         It involves sifting up the new element to its correct position.                         
+
 .............................. Trie ........................    
 
   -> A trie, also known as a prefix tree, is a tree-like data structure that is used to store a dynamic set
@@ -1787,56 +1838,6 @@ console.log(sparseArray[999]); // Output: 'last'
 
 
 
-..................................Heapification..........................................
-
--> Heapification is a process used in heap data structures, such as binary heaps, to ensure that the heap property is maintained.
-
-   The heap property for a binary heap is that for any given node i, the value of i is not smaller than the values of its children. 
-   There are two main approaches to heapification: top-down and bottom-up.
-
- >>>> Top-Down Heapification
-    
-   -> Top-down heapification is the process of maintaining the heap property from the root down to the leaves.
-      This approach is typically used in operations that involve removing the root element (e.g., in a priority queue),
-      which can potentially disrupt the heap property.
-
-   >>> Steps for Top-Down Heapification:
-
-     -> Remove the root: The root element is removed from the heap.
-     -> Heapify the root: The last element in the heap is moved to the root position.
-     -> Sift down: The new root element is sifted down to its correct position to restore the heap property.
-                   This involves comparing the root with its children and swapping it with the larger child if necessary.
-                   This process is repeated until the root is in its correct position or there are no more children to compare it with.
-     -> Time Complexity: The time complexity of top-down heapification is O(log n), where n is the number of elements in the heap.
-                         This is because, in the worst case, the root element may need to be sifted down through the entire height 
-                         of the heap.
-
-  >>>> Bottom-Up Heapification
-
-     -> Bottom-up heapification is the process of maintaining the heap property from the leaves up to the root.
-     
-     -> This approach is typically used in operations that involve inserting a new element into the heap, which can potentially 
-        disrupt the heap property.
-
-    >>> Steps for Bottom-Up Heapification:
-
-       -> Insert the new element: The new element is inserted at the end of the heap.
-       -> Sift up: The new element is sifted up to its correct position to restore the heap property.
-                   This involves comparing the new element with its parent and swapping it with the parent if necessary.
-                   This process is repeated until the new element is in its correct position or it becomes the root.
-
-       -> Time Complexity: The time complexity of bottom-up heapification is O(log n), 
-                           where n is the number of elements in the heap.
-                           This is because, in the worst case, the new element may need to be sifted up through the entire
-                            height of the heap.                       
-
-   >>>>>> Comparison
-
-      -> Top-Down Heapification is used when the root element is removed, which can disrupt the heap property.
-          -> It involves sifting down the new root to its correct position.
-      
-      -> Bottom-Up Heapification is used when a new element is inserted, which can disrupt the heap property.
-         It involves sifting up the new element to its correct position.                         
 
 
 
