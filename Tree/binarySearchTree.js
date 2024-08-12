@@ -5,13 +5,16 @@ class Node {
     this.right = null;
   }
 }
+
 class BinarySearchTree {
   constructor() {
     this.root = null;
   }
+
   isEmpty() {
     return this.root === null;
   }
+
   insert(value) {
     const node = new Node(value);
     if (this.isEmpty()) {
@@ -20,6 +23,7 @@ class BinarySearchTree {
       this.insertNode(this.root, node);
     }
   }
+
   insertNode(root, node) {
     if (node.value < root.value) {
       if (root.left === null) {
@@ -35,9 +39,11 @@ class BinarySearchTree {
       }
     }
   }
+
   search(value) {
     return this.searchNode(this.root, value);
   }
+
   searchNode(root, value) {
     if (!root) {
       return false;
@@ -45,17 +51,12 @@ class BinarySearchTree {
       if (root.value === value) {
         return true;
       } else if (value < root.value) {
-        return this.search(root.left, value);
+        return this.searchNode(root.left, value);
       } else {
-        return this.search(root.right, value);
+        return this.searchNode(root.right, value);
       }
     }
   }
-  // >>> Binary Search Trees Depth First Search <<<
-  //Preorder Travesal
-  // 1 .Read the data of the node
-  // 2. Visit the left subtree
-  // 3. Visit the right subtree
 
   preOrder(root) {
     if (root) {
@@ -64,10 +65,6 @@ class BinarySearchTree {
       this.preOrder(root.right);
     }
   }
-  // Inorder Traversal
-  // 1. Visit the left subtree
-  // 2. Read the data of the node
-  // 3. Visit the right subtree
 
   inOrder(root) {
     if (root) {
@@ -76,10 +73,7 @@ class BinarySearchTree {
       this.inOrder(root.right);
     }
   }
-  //PostOrder Travesal
-  // 1. Visit the left subtree
-  // 2. Visit the right subtree
-  // 3. Read the data of the node
+
   postOrder(root) {
     if (root) {
       this.postOrder(root.left);
@@ -87,15 +81,7 @@ class BinarySearchTree {
       console.log(root.value);
     }
   }
-  //Breadth First Search Traversal Approach
 
-  // 1. Create a Queue
-  // 2. Enqueue the root node
-  // 3. As long as a node exists in the Queue
-  //    a. Dequeue the node from the FormDataEvent
-  //    b. Read the node's value
-  //    c.Enqueue the node's left child if it exists
-  //    d.Enqueue the node's right child if it exists
   levelOrder() {
     const queue = [];
     queue.push(this.root);
@@ -110,6 +96,7 @@ class BinarySearchTree {
       }
     }
   }
+
   min(root) {
     if (!root.left) {
       return root.value;
@@ -150,12 +137,12 @@ class BinarySearchTree {
       }
 
       root.value = this.min(root.right);
-
       root.right = this.deleteNode(root.right, root.value);
     }
 
     return root;
   }
+
   closestValue(target, root = this.root) {
     let closest = root.value;
     while (root !== null) {
@@ -174,6 +161,7 @@ class BinarySearchTree {
 
     return closest;
   }
+
   isValidBst() {
     return this.checkBst(
       this.root,
@@ -197,15 +185,12 @@ class BinarySearchTree {
     );
   }
 }
+
 const bst = new BinarySearchTree();
 bst.insert(1);
 bst.insert(13);
 bst.insert(9);
 bst.delete(1);
-// bst.preOrder(bst.root)
-// bst.inOrder(bst.root);
-// bst.postOrder(bst.root);
 bst.levelOrder();
-console.log(bst.search(bst.root, 1));
-
-// console.log(bst.isEmpty());
+console.log(bst.closestValue(13))
+console.log(bst.search(9)); // Adjusted to call `search` correctly
